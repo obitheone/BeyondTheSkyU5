@@ -69,11 +69,11 @@
      <Compile Include="Assets\Scripts\Enemys\ProximityDetectorOrutaka.cs" />
      <Compile Include="Assets\Scripts\Enemys\Status_Controller_Flytaka.cs" />
      <Compile Include="Assets\Scripts\Enemys\Status_Controller_Orutaka.cs" />
-     <Compile Include="Assets\Scripts\MenuHelp.cs" />
      <Compile Include="Assets\Scripts\Menus\Change_color_tittle.cs" />
      <Compile Include="Assets\Scripts\Menus\Credits.cs" />
      <Compile Include="Assets\Scripts\Menus\FinNivel.cs" />
      <Compile Include="Assets\Scripts\Menus\Menu.cs" />
+     <Compile Include="Assets\Scripts\Menus\MenuHelp.cs" />
      <Compile Include="Assets\Scripts\Menus\MenuManager.cs" />
      <Compile Include="Assets\Scripts\Menus\MenuReturn.cs" />
      <Compile Include="Assets\Scripts\Menus\Portada.cs" />
