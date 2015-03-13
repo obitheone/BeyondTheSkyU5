@@ -19,13 +19,22 @@ public class SK_LiftingHook : MonoBehaviour {
 		_startPoint = transform.position; 
 		_startTime = Time.time; 
 	}
-	
+	void OnEnable ()
+	{
+
+		_temp_gravity = TP_Motor.Instance.gravity;
+		TP_Motor.Instance.gravity = 0;
+		_startPoint = transform.position; 
+		_startTime = Time.time; 
+
+	}
+	void OnDisable()
+	{
+		TP_Motor.Instance.gravity=_temp_gravity;
+	}
 	void Update () {
 		_prevPosition = transform.position;
 		transform.position = Vector3.Lerp(_startPoint, hitpoint, (Time.time - _startTime) / _duration); 
 	}
 
-	void OnDestroy() {
-		TP_Motor.Instance.gravity=_temp_gravity;
-	}
 }

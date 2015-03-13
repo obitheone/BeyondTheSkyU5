@@ -12,7 +12,6 @@ public class SK_TractorBeam : MonoBehaviour {
 	private Vector3 _prevPosition;
 	// Use this for initialization
 	void Start () {
-		GetComponent<Rigidbody>().useGravity=false;
 		energy = 50;
 	}
 	
@@ -28,9 +27,16 @@ public class SK_TractorBeam : MonoBehaviour {
 			(player.transform.right.z*offset_lateral)+(player.transform.position.z+player.transform.forward.z*2)), step); 
 		
 		} 
-	void OnDestroy() {
+
+	void OnDisable()
+	{
 		GetComponent<Rigidbody>().useGravity=true;
 		GetComponent<Rigidbody>().velocity =  20*(transform.position -_prevPosition) ;//Añadimos la incercia al finalizar el movimiento.
+	}
+
+	void OnEnable()
+	{
+		GetComponent<Rigidbody>().useGravity=false;
 	}
 
 }

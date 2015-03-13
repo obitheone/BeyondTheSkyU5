@@ -8,7 +8,6 @@ using System.Collections;
 public class FX_LightningBolt : MonoBehaviour
 {
 	public Vector3 target;
-	public bool active = false;
 	public int zigs = 100;
 	public float speed = 1f;
 	public float scale = 1f;
@@ -22,14 +21,26 @@ public class FX_LightningBolt : MonoBehaviour
 	
 	void Start()
 	{
-		oneOverZigs = 1f / (float)zigs;
-		GetComponent<ParticleEmitter>().emit = false;
+		GetComponent<ParticleRenderer>().enabled = true;
+		GetComponent<ParticleEmitter>().enabled = true;
 
+		GetComponent<ParticleEmitter>().emit = true;
+		oneOverZigs = 1f / (float)zigs;
 		GetComponent<ParticleEmitter>().Emit(zigs);
 		particles = GetComponent<ParticleEmitter>().particles;
-		active = false;
 	}
-	
+
+	void OnEnable()
+	{
+		GetComponent<ParticleRenderer>().enabled = true;
+		GetComponent<ParticleEmitter>().enabled = true;
+	}
+
+	void OnDisable()
+	{
+		GetComponent<ParticleRenderer>().enabled = false;
+		GetComponent<ParticleEmitter>().enabled = false;
+	}
 	void Update ()
 	{
 

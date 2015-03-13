@@ -146,27 +146,30 @@ public class TP_Skills : MonoBehaviour {
 	private void activatetractorbeam()
 	{
 		//Iluminate (Color.black,"Beamer");
+
 		Ray ray =Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit, 1000,(1<<LayerMask.NameToLayer("Beamer"))))
 		{
 			if (hit.collider.gameObject.tag == "Beamer"){
-				if(hit.collider.gameObject.GetComponent<SK_TractorBeam>() == null)
-				{
+				//if(hit.collider.gameObject.GetComponent<SK_TractorBeam>() == null)
+				//{
 					_beamobject=hit.collider.gameObject;
+
 					if (!_beamobject.GetComponent("SK_TractorBeam")) _beamobject.AddComponent<SK_TractorBeam>();
 
 					_currentObjectBeamScript= _beamobject.GetComponent("SK_TractorBeam") as SK_TractorBeam;
+
 					_currentObjectBeamScript.enabled= true;
 					_currentLightningBoltScriptR.enabled=true;
+					
 					_horizontal = 1f;
 					_lateral = 0.7f;
 						
 					_currentObjectBeamScript.player=player;
 					_currentLightningBoltScriptR.target=hit.collider.gameObject.transform.position;
-					_currentLightningBoltScriptR.active=true;
 					_beam=true;
-				}
+				//}
 			}
 		}
 		enabledSkill = SkillTypes.noSkill;
@@ -180,30 +183,32 @@ public class TP_Skills : MonoBehaviour {
 		if(Physics.Raycast(ray, out hit, 1000))
 		{
 			if (hit.collider.gameObject.tag == "Tractor"){
-				if(hit.collider.gameObject.GetComponent<SK_LiftingHook>() == null)
-				{
-					_tractorobject=hit.collider.gameObject;
 
-					if (!_tractorobject.GetComponent("SK_LiftingHook")) 
-							_tractorobject.AddComponent<SK_LiftingHook>();
+				_tractorobject=hit.collider.gameObject;
 					
-					_currentObjectHookScript= _tractorobject.GetComponent("SK_LiftingHook") as SK_LiftingHook;
-					_currentObjectHookScript.enabled= true;
-					_currentLightningBoltScriptL.enabled=true;
-					_currentObjectHookScript.hitpoint=hit.point;
-					_hitpoint=hit.point;
-					_tractor=true;
-					_currentLightningBoltScriptL.target=hit.point;
+				if (!player.GetComponent("SK_LiftingHook")) 
+				{
+					player.AddComponent<SK_LiftingHook>();
+					_currentObjectHookScript= player.GetComponent("SK_LiftingHook") as SK_LiftingHook;
 				}
+
+				_currentObjectHookScript.enabled= true;
+				_currentLightningBoltScriptL.enabled=true;
+
+				_currentObjectHookScript.hitpoint=hit.point;
+				_hitpoint=hit.point;
+				_tractor=true;
+				_currentLightningBoltScriptL.target=hit.point;
 			}
 		}
 		enabledSkill = SkillTypes.noSkill;
 	}
 	private void deactivateliftingHook()
 	{
-		_tractor=false;
 		_currentObjectHookScript.enabled= false;
 		_currentLightningBoltScriptL.enabled=false;
+
+		_tractor=false;
 		enabledSkill = SkillTypes.noSkill;
 	}
 
