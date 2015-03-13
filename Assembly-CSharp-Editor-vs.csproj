@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{FC8EFCF1-F2CA-68D9-A169-3AD9F6F987BB}</ProjectGuid>
+	<ProjectGuid>{162B69C1-39AC-E588-525D-57501BE4812E}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,50 +46,46 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BezierCurves\Bezier.cs" />
-     <Compile Include="Assets\Scripts\BezierCurves\BezierControlPointMode.cs" />
-     <Compile Include="Assets\Scripts\BezierCurves\BezierCurve.cs" />
-     <Compile Include="Assets\Scripts\BezierCurves\BezierSpline.cs" />
-     <Compile Include="Assets\Scripts\BezierCurves\Line.cs" />
-     <Compile Include="Assets\Scripts\BezierCurves\SplineDecorator.cs" />
-     <Compile Include="Assets\Scripts\BezierCurves\SplineWalker.cs" />
-     <Compile Include="Assets\Scripts\BezierCurves\SplineWalkerMode.cs" />
-     <Compile Include="Assets\Scripts\Camara\TP_Camera.cs" />
-     <Compile Include="Assets\Scripts\Debug\HUDFPS.cs" />
-     <Compile Include="Assets\Scripts\Debug\Status_dbg.cs" />
-     <Compile Include="Assets\Scripts\Debug\newdbg.cs" />
-     <Compile Include="Assets\Scripts\Dron\DN_Follow.cs" />
-     <Compile Include="Assets\Scripts\Dron\DN_Life.cs" />
-     <Compile Include="Assets\Scripts\Dron\DN_LookAt.cs" />
-     <Compile Include="Assets\Scripts\Enemys\AgentScriptFlytaka.cs" />
-     <Compile Include="Assets\Scripts\Enemys\AgentScriptOrutaka.cs" />
-     <Compile Include="Assets\Scripts\Enemys\Destroy_delay.cs" />
-     <Compile Include="Assets\Scripts\Enemys\EnemyStats.cs" />
-     <Compile Include="Assets\Scripts\Enemys\ProximityDetectorFlytaka.cs" />
-     <Compile Include="Assets\Scripts\Enemys\ProximityDetectorOrutaka.cs" />
-     <Compile Include="Assets\Scripts\Enemys\Status_Controller_Flytaka.cs" />
-     <Compile Include="Assets\Scripts\Enemys\Status_Controller_Orutaka.cs" />
-     <Compile Include="Assets\Scripts\MenuHelp.cs" />
-     <Compile Include="Assets\Scripts\Menus\Change_color_tittle.cs" />
-     <Compile Include="Assets\Scripts\Menus\Credits.cs" />
-     <Compile Include="Assets\Scripts\Menus\FinNivel.cs" />
-     <Compile Include="Assets\Scripts\Menus\Menu.cs" />
-     <Compile Include="Assets\Scripts\Menus\MenuManager.cs" />
-     <Compile Include="Assets\Scripts\Menus\MenuReturn.cs" />
-     <Compile Include="Assets\Scripts\Menus\Portada.cs" />
-     <Compile Include="Assets\Scripts\Menus\ReturnMenu.cs" />
-     <Compile Include="Assets\Scripts\Player\TP_Controller.cs" />
-     <Compile Include="Assets\Scripts\Player\TP_Motor.cs" />
-     <Compile Include="Assets\Scripts\Player\TP_Skills.cs" />
-     <Compile Include="Assets\Scripts\Player\TP_Status.cs" />
-     <Compile Include="Assets\Scripts\PlayerSkills\FX_Blackhole.cs" />
-     <Compile Include="Assets\Scripts\PlayerSkills\FX_LightningBolt.cs" />
-     <Compile Include="Assets\Scripts\PlayerSkills\Perlin.cs" />
-     <Compile Include="Assets\Scripts\PlayerSkills\SK_LiftingHook.cs" />
-     <Compile Include="Assets\Scripts\PlayerSkills\SK_TractorBeam.cs" />
+     <Compile Include="Assets\Scripts\Editor\BezierCurveInspector.cs" />
+     <Compile Include="Assets\Scripts\Editor\BezierSplineInspector.cs" />
+     <Compile Include="Assets\Scripts\Editor\LineInspector.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/androidplayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WP8.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/wp8support/UnityEditor.WP8.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Metro.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/metrosupport/UnityEditor.Metro.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.BB10.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/blackberryplayer/UnityEditor.BB10.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WebGL.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/webglsupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/linuxstandalonesupport/UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.OSXStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/macstandalonesupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{FC8EFCF1-F2CA-68D9-A169-3AD9F6F987BB}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

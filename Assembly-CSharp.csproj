@@ -46,18 +46,38 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Camera\BezierCurves\Bezier.cs" />
-     <Compile Include="Assets\Scripts\Camera\BezierCurves\BezierControlPointMode.cs" />
-     <Compile Include="Assets\Scripts\Camera\BezierCurves\BezierCurve.cs" />
-     <Compile Include="Assets\Scripts\Camera\BezierCurves\BezierSpline.cs" />
-     <Compile Include="Assets\Scripts\Camera\BezierCurves\Line.cs" />
-     <Compile Include="Assets\Scripts\Camera\BezierCurves\SplineDecorator.cs" />
-     <Compile Include="Assets\Scripts\Camera\BezierCurves\SplineWalker.cs" />
-     <Compile Include="Assets\Scripts\Camera\BezierCurves\SplineWalkerMode.cs" />
-     <Compile Include="Assets\Scripts\Camera\TP_Camera.cs" />
+     <Compile Include="Assets\Scripts\BezierCurves\Bezier.cs" />
+     <Compile Include="Assets\Scripts\BezierCurves\BezierControlPointMode.cs" />
+     <Compile Include="Assets\Scripts\BezierCurves\BezierCurve.cs" />
+     <Compile Include="Assets\Scripts\BezierCurves\BezierSpline.cs" />
+     <Compile Include="Assets\Scripts\BezierCurves\Line.cs" />
+     <Compile Include="Assets\Scripts\BezierCurves\SplineDecorator.cs" />
+     <Compile Include="Assets\Scripts\BezierCurves\SplineWalker.cs" />
+     <Compile Include="Assets\Scripts\BezierCurves\SplineWalkerMode.cs" />
+     <Compile Include="Assets\Scripts\Camara\TP_Camera.cs" />
+     <Compile Include="Assets\Scripts\Debug\HUDFPS.cs" />
+     <Compile Include="Assets\Scripts\Debug\Status_dbg.cs" />
+     <Compile Include="Assets\Scripts\Debug\newdbg.cs" />
      <Compile Include="Assets\Scripts\Dron\DN_Follow.cs" />
      <Compile Include="Assets\Scripts\Dron\DN_Life.cs" />
      <Compile Include="Assets\Scripts\Dron\DN_LookAt.cs" />
+     <Compile Include="Assets\Scripts\Enemys\AgentScriptFlytaka.cs" />
+     <Compile Include="Assets\Scripts\Enemys\AgentScriptOrutaka.cs" />
+     <Compile Include="Assets\Scripts\Enemys\Destroy_delay.cs" />
+     <Compile Include="Assets\Scripts\Enemys\EnemyStats.cs" />
+     <Compile Include="Assets\Scripts\Enemys\ProximityDetectorFlytaka.cs" />
+     <Compile Include="Assets\Scripts\Enemys\ProximityDetectorOrutaka.cs" />
+     <Compile Include="Assets\Scripts\Enemys\Status_Controller_Flytaka.cs" />
+     <Compile Include="Assets\Scripts\Enemys\Status_Controller_Orutaka.cs" />
+     <Compile Include="Assets\Scripts\MenuHelp.cs" />
+     <Compile Include="Assets\Scripts\Menus\Change_color_tittle.cs" />
+     <Compile Include="Assets\Scripts\Menus\Credits.cs" />
+     <Compile Include="Assets\Scripts\Menus\FinNivel.cs" />
+     <Compile Include="Assets\Scripts\Menus\Menu.cs" />
+     <Compile Include="Assets\Scripts\Menus\MenuManager.cs" />
+     <Compile Include="Assets\Scripts\Menus\MenuReturn.cs" />
+     <Compile Include="Assets\Scripts\Menus\Portada.cs" />
+     <Compile Include="Assets\Scripts\Menus\ReturnMenu.cs" />
      <Compile Include="Assets\Scripts\Player\TP_Controller.cs" />
      <Compile Include="Assets\Scripts\Player\TP_Motor.cs" />
      <Compile Include="Assets\Scripts\Player\TP_Skills.cs" />
