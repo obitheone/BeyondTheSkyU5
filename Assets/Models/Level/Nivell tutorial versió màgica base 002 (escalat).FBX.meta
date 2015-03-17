@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: f663a2834c1cabe47bd9eda57fbd71b9
+timeCreated: 1426581782
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: altura bolets 001
+    100002: altura bolets 002
+    100004: Aro base arbre
+    100006: Base arbre
+    100008: base catarata
+    100010: "escal\xF3 004"
+    100012: "escal\xF3 005"
+    100014: "escal\xF3 orutaka 001"
+    100016: "escal\xF3 orutaka 002"
+    100018: "escal\xF3 orutaka 003"
+    100020: "escal\xF3001"
+    100022: "escal\xF3002"
+    100024: "escal\xF3003"
+    100026: Illa 001
+    100028: Illa 002
+    100030: montanya 001
+    100032: montanya 002
+    100034: montanya bolet 003
+    100036: montanya bolet 004
+    100038: montanya bolet 005
+    100040: montanya bolet001
+    100042: montanya bolet002
+    100044: //RootNode
+    100046: plataforma flotant 001
+    100048: plataforma flotant 002
+    100050: plataforma flotant 003
+    100052: plataforma flotant 004
+    100054: plataforma flotant 005
+    100056: plataforma flotant 006
+    100058: plataforma flotant 007
+    100060: plataforma flotant 008
+    100062: plataforma flotant 009
+    100064: plataforma flotant 010
+    100066: Plataforma flotant final
+    100068: Terreny bolets001
+    400000: altura bolets 001
+    400002: altura bolets 002
+    400004: Aro base arbre
+    400006: Base arbre
+    400008: base catarata
+    400010: "escal\xF3 004"
+    400012: "escal\xF3 005"
+    400014: "escal\xF3 orutaka 001"
+    400016: "escal\xF3 orutaka 002"
+    400018: "escal\xF3 orutaka 003"
+    400020: "escal\xF3001"
+    400022: "escal\xF3002"
+    400024: "escal\xF3003"
+    400026: Illa 001
+    400028: Illa 002
+    400030: montanya 001
+    400032: montanya 002
+    400034: montanya bolet 003
+    400036: montanya bolet 004
+    400038: montanya bolet 005
+    400040: montanya bolet001
+    400042: montanya bolet002
+    400044: //RootNode
+    400046: plataforma flotant 001
+    400048: plataforma flotant 002
+    400050: plataforma flotant 003
+    400052: plataforma flotant 004
+    400054: plataforma flotant 005
+    400056: plataforma flotant 006
+    400058: plataforma flotant 007
+    400060: plataforma flotant 008
+    400062: plataforma flotant 009
+    400064: plataforma flotant 010
+    400066: Plataforma flotant final
+    400068: Terreny bolets001
+    2300000: altura bolets 001
+    2300002: altura bolets 002
+    2300004: Aro base arbre
+    2300006: Base arbre
+    2300008: base catarata
+    2300010: "escal\xF3 004"
+    2300012: "escal\xF3 005"
+    2300014: "escal\xF3 orutaka 001"
+    2300016: "escal\xF3 orutaka 002"
+    2300018: "escal\xF3 orutaka 003"
+    2300020: "escal\xF3001"
+    2300022: "escal\xF3002"
+    2300024: "escal\xF3003"
+    2300026: Illa 001
+    2300028: Illa 002
+    2300030: montanya 001
+    2300032: montanya 002
+    2300034: montanya bolet 003
+    2300036: montanya bolet 004
+    2300038: montanya bolet 005
+    2300040: montanya bolet001
+    2300042: montanya bolet002
+    2300044: plataforma flotant 001
+    2300046: plataforma flotant 002
+    2300048: plataforma flotant 003
+    2300050: plataforma flotant 004
+    2300052: plataforma flotant 005
+    2300054: plataforma flotant 006
+    2300056: plataforma flotant 007
+    2300058: plataforma flotant 008
+    2300060: plataforma flotant 009
+    2300062: plataforma flotant 010
+    2300064: Plataforma flotant final
+    2300066: Terreny bolets001
+    3300000: altura bolets 001
+    3300002: altura bolets 002
+    3300004: Aro base arbre
+    3300006: Base arbre
+    3300008: base catarata
+    3300010: "escal\xF3 004"
+    3300012: "escal\xF3 005"
+    3300014: "escal\xF3 orutaka 001"
+    3300016: "escal\xF3 orutaka 002"
+    3300018: "escal\xF3 orutaka 003"
+    3300020: "escal\xF3001"
+    3300022: "escal\xF3002"
+    3300024: "escal\xF3003"
+    3300026: Illa 001
+    3300028: Illa 002
+    3300030: montanya 001
+    3300032: montanya 002
+    3300034: montanya bolet 003
+    3300036: montanya bolet 004
+    3300038: montanya bolet 005
+    3300040: montanya bolet001
+    3300042: montanya bolet002
+    3300044: plataforma flotant 001
+    3300046: plataforma flotant 002
+    3300048: plataforma flotant 003
+    3300050: plataforma flotant 004
+    3300052: plataforma flotant 005
+    3300054: plataforma flotant 006
+    3300056: plataforma flotant 007
+    3300058: plataforma flotant 008
+    3300060: plataforma flotant 009
+    3300062: plataforma flotant 010
+    3300064: Plataforma flotant final
+    3300066: Terreny bolets001
+    4300000: "escal\xF3001"
+    4300002: altura bolets 001
+    4300004: altura bolets 002
+    4300006: "escal\xF3002"
+    4300008: "escal\xF3003"
+    4300010: Terreny bolets001
+    4300012: montanya bolet001
+    4300014: montanya bolet002
+    4300016: montanya bolet 004
+    4300018: montanya bolet 003
+    4300020: montanya bolet 005
+    4300022: Aro base arbre
+    4300024: montanya 002
+    4300026: montanya 001
+    4300028: "escal\xF3 orutaka 002"
+    4300030: "escal\xF3 orutaka 001"
+    4300032: "escal\xF3 orutaka 003"
+    4300034: base catarata
+    4300036: Illa 001
+    4300038: Illa 002
+    4300040: Base arbre
+    4300042: Plataforma flotant final
+    4300044: plataforma flotant 001
+    4300046: plataforma flotant 002
+    4300048: plataforma flotant 003
+    4300050: plataforma flotant 004
+    4300052: plataforma flotant 005
+    4300054: plataforma flotant 006
+    4300056: plataforma flotant 007
+    4300058: plataforma flotant 008
+    4300060: plataforma flotant 009
+    4300062: plataforma flotant 010
+    4300064: "escal\xF3 004"
+    4300066: "escal\xF3 005"
+    6400000: altura bolets 001
+    6400002: altura bolets 002
+    6400004: Aro base arbre
+    6400006: Base arbre
+    6400008: base catarata
+    6400010: "escal\xF3 004"
+    6400012: "escal\xF3 005"
+    6400014: "escal\xF3 orutaka 001"
+    6400016: "escal\xF3 orutaka 002"
+    6400018: "escal\xF3 orutaka 003"
+    6400020: "escal\xF3001"
+    6400022: "escal\xF3002"
+    6400024: "escal\xF3003"
+    6400026: Illa 001
+    6400028: Illa 002
+    6400030: montanya 001
+    6400032: montanya 002
+    6400034: montanya bolet 003
+    6400036: montanya bolet 004
+    6400038: montanya bolet 005
+    6400040: montanya bolet001
+    6400042: montanya bolet002
+    6400044: plataforma flotant 001
+    6400046: plataforma flotant 002
+    6400048: plataforma flotant 003
+    6400050: plataforma flotant 004
+    6400052: plataforma flotant 005
+    6400054: plataforma flotant 006
+    6400056: plataforma flotant 007
+    6400058: plataforma flotant 008
+    6400060: plataforma flotant 009
+    6400062: plataforma flotant 010
+    6400064: Plataforma flotant final
+    6400066: Terreny bolets001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -87,7 +87,7 @@
      <Compile Include="Assets\Scripts\PlayerSkills\Perlin.cs" />
      <Compile Include="Assets\Scripts\PlayerSkills\SK_LiftingHook.cs" />
      <Compile Include="Assets\Scripts\PlayerSkills\SK_TractorBeam.cs" />
-     <Compile Include="Assets\anim.cs" />
+     <Compile Include="Assets\Scripts\Props\PROPS_Resize.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
