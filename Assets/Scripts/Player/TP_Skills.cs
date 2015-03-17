@@ -43,7 +43,7 @@ public class TP_Skills : MonoBehaviour {
 		_beam = false;
 		_currentLightningBoltScriptR = righthand.GetComponent("FX_LightningBolt") as FX_LightningBolt;
 		_currentLightningBoltScriptL = lefthand.GetComponent("FX_LightningBolt") as FX_LightningBolt;
-		_currentObjectHookScript = player.GetComponent("SK_LiftingHook") as SK_LiftingHook;
+		//_currentObjectHookScript = player.GetComponent("SK_LiftingHook") as SK_LiftingHook;
 	}
 
 	void LateUpdate()
