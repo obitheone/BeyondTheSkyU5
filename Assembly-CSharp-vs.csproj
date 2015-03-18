@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scripts\PlayerSkills\FX_LightningBolt.cs" />
      <Compile Include="Assets\Scripts\PlayerSkills\Perlin.cs" />
      <Compile Include="Assets\Scripts\PlayerSkills\SK_LiftingHook.cs" />
+     <Compile Include="Assets\Scripts\PlayerSkills\SK_Push.cs" />
      <Compile Include="Assets\Scripts\PlayerSkills\SK_TractorBeam.cs" />
      <Compile Include="Assets\Scripts\Props\PROPS_Resize.cs" />
  <Reference Include="UnityEngine.UI">

@@ -70,6 +70,7 @@ public class TP_Controller : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.F)) TP_Skills.Instance.ActivateSkill(SkillTypes.tractionBeam);
         if (Input.GetKeyDown(KeyCode.G)) TP_Skills.Instance.ActivateSkill(SkillTypes.liftingHook);
         if (Input.GetKeyDown(KeyCode.B)) TP_Skills.Instance.ActivateSkill(SkillTypes.blackHole);
+		if (Input.GetKeyDown(KeyCode.V)) TP_Skills.Instance.ActivateSkill(SkillTypes.push);
 
         //Apuntar
         if (Input.GetKeyDown(KeyCode.Z))

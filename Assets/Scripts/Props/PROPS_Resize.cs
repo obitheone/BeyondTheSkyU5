@@ -20,15 +20,14 @@ public class PROPS_Resize : MonoBehaviour {
 			Debug.Log ("Dentro");
 			_anim.speed = 1.0f;
 			_anim.enabled = true;
+
 		}
 
 	}
 	void OnTriggerExit(Collider other) {
 
 		if (other.gameObject.tag == "Player") {//aqui mirar si ponemos algun tag mas como rocas y tal .
-
-		_anim.speed =-1.0f;
-		//_anim.enabled=true;
+			_anim.speed =-1.0f;
 		}
 
 	}

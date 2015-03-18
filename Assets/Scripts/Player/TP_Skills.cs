@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public enum SkillTypes { noSkill, tractionBeam, liftingHook, blackHole }
+public enum SkillTypes { noSkill, tractionBeam, liftingHook, blackHole, push }
 
 public class TP_Skills : MonoBehaviour {
 
@@ -31,6 +31,7 @@ public class TP_Skills : MonoBehaviour {
 	private FX_LightningBolt _currentLightningBoltScriptL;
     //PRIVATE
 
+	public GameObject tempshoot;
 
     void Awake()
     {
@@ -115,6 +116,9 @@ public class TP_Skills : MonoBehaviour {
 				deactivateliftingHook();
 			}
 			break;
+		case SkillTypes.push:
+			pushobject(50.0f);
+			break;
 		default: break;
 		}	
 	}
@@ -151,7 +155,7 @@ public class TP_Skills : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit, 1000,(1<<LayerMask.NameToLayer("Beamer"))))
 		{
-			if (hit.collider.gameObject.tag == "Beamer"){
+			//if (hit.collider.gameObject.tag == "Beamer"){
 				//if(hit.collider.gameObject.GetComponent<SK_TractorBeam>() == null)
 				//{
 					_beamobject=hit.collider.gameObject;
@@ -170,7 +174,7 @@ public class TP_Skills : MonoBehaviour {
 					_currentLightningBoltScriptR.target=hit.collider.gameObject.transform.position;
 					_beam=true;
 				//}
-			}
+			//}
 		}
 		enabledSkill = SkillTypes.noSkill;
 	}
@@ -180,9 +184,9 @@ public class TP_Skills : MonoBehaviour {
 		//Iluminate (Color.black,"Tractor");
 		Ray ray =Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
-		if(Physics.Raycast(ray, out hit, 1000))
+		if(Physics.Raycast(ray, out hit, 1000,(1<<LayerMask.NameToLayer("Tractor"))))
 		{
-			if (hit.collider.gameObject.tag == "Tractor"){
+			//if (hit.collider.gameObject.tag == "Tractor"){
 
 				_tractorobject=hit.collider.gameObject;
 					
@@ -199,7 +203,7 @@ public class TP_Skills : MonoBehaviour {
 				_hitpoint=hit.point;
 				_tractor=true;
 				_currentLightningBoltScriptL.target=hit.point;
-			}
+			//}
 		}
 		enabledSkill = SkillTypes.noSkill;
 	}
@@ -217,7 +221,7 @@ public class TP_Skills : MonoBehaviour {
 		//miramos si el raton en este momento hace hit sobre algun objeto, si es asi lanzamos en esa direccion
 		Ray ray =Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
-		if(Physics.Raycast(ray, out hit, 500))
+		if(Physics.Raycast(ray, out hit, 1000))
 		{
 
 			Vector3 direction=(hit.collider.transform.position-_beamobject.transform.position);
@@ -234,6 +238,54 @@ public class TP_Skills : MonoBehaviour {
 		}
 		deactivatetractorbeam();
 	}
-		
+	private void pushobject(float energy)
+	{
+		/*Ray ray =Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+		if(Physics.Raycast(ray, out hit, 1000))
+		{
+			
+			if (hit.collider.gameObject.GetComponent<Rigidbody>()){
+				Vector3 direction=(hit.collider.transform.position-righthand.transform.position);
+				direction.Normalize();
+				hit.collider.gameObject.GetComponent<Rigidbody>().AddForce(direction*energy,ForceMode.Impulse);
+				enabledSkill = SkillTypes.noSkill;
+			}
+		}*/
+
+		/*Collider[] listOfObjects = Physics.OverlapSphere(righthand.transform.position, 500,(1<<LayerMask.NameToLayer("Beamer")));
+
+		int i = 0;
+		int listlentght = listOfObjects.Length;
+		for(i = 0; i < listlentght; ++i)
+		{
+
+			Vector3 direction=(listOfObjects[i].gameObject.transform.position-righthand.transform.position);
+			float angle = Vector3.Angle(righthand.transform.forward, direction);
+			//if ((Mathf.Abs(angle) < 90)&&(Mathf.Abs(angle) > 75)){
+			if (angle < 90 && angle > 75){
+				Debug.DrawRay(righthand.transform.position,direction);
+				Debug.Log(angle);
+				Debug.Log(listOfObjects[i].gameObject.name);
+				if (listOfObjects[i].gameObject.GetComponent<Rigidbody>()){	
+					direction.Normalize();
+					//listOfObjects[i].gameObject.GetComponent<Rigidbody>().AddForce(direction*energy,ForceMode.Impulse);
+				}
+			}
+
+
+		}*/
+
+		//encarar hacia el player y disparar//
+
+		Vector3 relativePos = righthand.transform.forward;
+	
+		GameObject newProjectile = Instantiate( tempshoot, righthand.transform.position, righthand.transform.rotation ) as GameObject;
+		newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection(player.transform.forward*50);
+
+		enabledSkill = SkillTypes.noSkill;
+
+	}
+
 }
 	
