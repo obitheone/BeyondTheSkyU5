@@ -40,6 +40,40 @@ ModelImporter:
     100064: plataforma flotant 010
     100066: Plataforma flotant final
     100068: Terreny bolets001
+    100070: FinalSkyIsland
+    100072: Island001
+    100074: Island002
+    100076: Mountain001
+    100078: Mountain002
+    100080: MushroomMountain001
+    100082: MushroomMountain002
+    100084: MushroomMountain003
+    100086: MushroomMountain004
+    100088: MushroomMountain005
+    100090: MushroomsGround001
+    100092: MushroomsGround002
+    100094: MushroomsGround003
+    100096: OrutakaStair001
+    100098: OrutakaStair002
+    100100: OrutakaStair003
+    100102: SkyIsland001
+    100104: SkyIsland002
+    100106: SkyIsland003
+    100108: SkyIsland004
+    100110: SkyIsland005
+    100112: SkyIsland006
+    100114: SkyIsland007
+    100116: SkyIsland008
+    100118: SkyIsland009
+    100120: SkyIsland010
+    100122: Stair001
+    100124: Stair002
+    100126: Stair003
+    100128: Stair004
+    100130: Stair005
+    100132: TreeHoop
+    100134: TreeIsland
+    100136: WaterfallGround
     400000: altura bolets 001
     400002: altura bolets 002
     400004: Aro base arbre
@@ -75,6 +109,40 @@ ModelImporter:
     400064: plataforma flotant 010
     400066: Plataforma flotant final
     400068: Terreny bolets001
+    400070: FinalSkyIsland
+    400072: Island001
+    400074: Island002
+    400076: Mountain001
+    400078: Mountain002
+    400080: MushroomMountain001
+    400082: MushroomMountain002
+    400084: MushroomMountain003
+    400086: MushroomMountain004
+    400088: MushroomMountain005
+    400090: MushroomsGround001
+    400092: MushroomsGround002
+    400094: MushroomsGround003
+    400096: OrutakaStair001
+    400098: OrutakaStair002
+    400100: OrutakaStair003
+    400102: SkyIsland001
+    400104: SkyIsland002
+    400106: SkyIsland003
+    400108: SkyIsland004
+    400110: SkyIsland005
+    400112: SkyIsland006
+    400114: SkyIsland007
+    400116: SkyIsland008
+    400118: SkyIsland009
+    400120: SkyIsland010
+    400122: Stair001
+    400124: Stair002
+    400126: Stair003
+    400128: Stair004
+    400130: Stair005
+    400132: TreeHoop
+    400134: TreeIsland
+    400136: WaterfallGround
     2300000: altura bolets 001
     2300002: altura bolets 002
     2300004: Aro base arbre
@@ -109,6 +177,40 @@ ModelImporter:
     2300062: plataforma flotant 010
     2300064: Plataforma flotant final
     2300066: Terreny bolets001
+    2300068: FinalSkyIsland
+    2300070: Island001
+    2300072: Island002
+    2300074: Mountain001
+    2300076: Mountain002
+    2300078: MushroomMountain001
+    2300080: MushroomMountain002
+    2300082: MushroomMountain003
+    2300084: MushroomMountain004
+    2300086: MushroomMountain005
+    2300088: MushroomsGround001
+    2300090: MushroomsGround002
+    2300092: MushroomsGround003
+    2300094: OrutakaStair001
+    2300096: OrutakaStair002
+    2300098: OrutakaStair003
+    2300100: SkyIsland001
+    2300102: SkyIsland002
+    2300104: SkyIsland003
+    2300106: SkyIsland004
+    2300108: SkyIsland005
+    2300110: SkyIsland006
+    2300112: SkyIsland007
+    2300114: SkyIsland008
+    2300116: SkyIsland009
+    2300118: SkyIsland010
+    2300120: Stair001
+    2300122: Stair002
+    2300124: Stair003
+    2300126: Stair004
+    2300128: Stair005
+    2300130: TreeHoop
+    2300132: TreeIsland
+    2300134: WaterfallGround
     3300000: altura bolets 001
     3300002: altura bolets 002
     3300004: Aro base arbre
@@ -143,6 +245,40 @@ ModelImporter:
     3300062: plataforma flotant 010
     3300064: Plataforma flotant final
     3300066: Terreny bolets001
+    3300068: FinalSkyIsland
+    3300070: Island001
+    3300072: Island002
+    3300074: Mountain001
+    3300076: Mountain002
+    3300078: MushroomMountain001
+    3300080: MushroomMountain002
+    3300082: MushroomMountain003
+    3300084: MushroomMountain004
+    3300086: MushroomMountain005
+    3300088: MushroomsGround001
+    3300090: MushroomsGround002
+    3300092: MushroomsGround003
+    3300094: OrutakaStair001
+    3300096: OrutakaStair002
+    3300098: OrutakaStair003
+    3300100: SkyIsland001
+    3300102: SkyIsland002
+    3300104: SkyIsland003
+    3300106: SkyIsland004
+    3300108: SkyIsland005
+    3300110: SkyIsland006
+    3300112: SkyIsland007
+    3300114: SkyIsland008
+    3300116: SkyIsland009
+    3300118: SkyIsland010
+    3300120: Stair001
+    3300122: Stair002
+    3300124: Stair003
+    3300126: Stair004
+    3300128: Stair005
+    3300130: TreeHoop
+    3300132: TreeIsland
+    3300134: WaterfallGround
     4300000: "escal\xF3001"
     4300002: altura bolets 001
     4300004: altura bolets 002
@@ -177,6 +313,40 @@ ModelImporter:
     4300062: plataforma flotant 010
     4300064: "escal\xF3 004"
     4300066: "escal\xF3 005"
+    4300068: Stair001
+    4300070: MushroomsGround003
+    4300072: MushroomsGround002
+    4300074: Stair002
+    4300076: Stair003
+    4300078: MushroomsGround001
+    4300080: MushroomMountain001
+    4300082: MushroomMountain002
+    4300084: MushroomMountain004
+    4300086: MushroomMountain003
+    4300088: MushroomMountain005
+    4300090: TreeHoop
+    4300092: Mountain002
+    4300094: Mountain001
+    4300096: OrutakaStair002
+    4300098: OrutakaStair001
+    4300100: OrutakaStair003
+    4300102: WaterfallGround
+    4300104: Island001
+    4300106: Island002
+    4300108: TreeIsland
+    4300110: FinalSkyIsland
+    4300112: SkyIsland001
+    4300114: SkyIsland002
+    4300116: SkyIsland003
+    4300118: SkyIsland004
+    4300120: SkyIsland005
+    4300122: SkyIsland006
+    4300124: SkyIsland007
+    4300126: SkyIsland008
+    4300128: SkyIsland009
+    4300130: SkyIsland010
+    4300132: Stair004
+    4300134: Stair005
     6400000: altura bolets 001
     6400002: altura bolets 002
     6400004: Aro base arbre
@@ -211,6 +381,40 @@ ModelImporter:
     6400062: plataforma flotant 010
     6400064: Plataforma flotant final
     6400066: Terreny bolets001
+    6400068: FinalSkyIsland
+    6400070: Island001
+    6400072: Island002
+    6400074: Mountain001
+    6400076: Mountain002
+    6400078: MushroomMountain001
+    6400080: MushroomMountain002
+    6400082: MushroomMountain003
+    6400084: MushroomMountain004
+    6400086: MushroomMountain005
+    6400088: MushroomsGround001
+    6400090: MushroomsGround002
+    6400092: MushroomsGround003
+    6400094: OrutakaStair001
+    6400096: OrutakaStair002
+    6400098: OrutakaStair003
+    6400100: SkyIsland001
+    6400102: SkyIsland002
+    6400104: SkyIsland003
+    6400106: SkyIsland004
+    6400108: SkyIsland005
+    6400110: SkyIsland006
+    6400112: SkyIsland007
+    6400114: SkyIsland008
+    6400116: SkyIsland009
+    6400118: SkyIsland010
+    6400120: Stair001
+    6400122: Stair002
+    6400124: Stair003
+    6400126: Stair004
+    6400128: Stair005
+    6400130: TreeHoop
+    6400132: TreeIsland
+    6400134: WaterfallGround
   materials:
     importMaterials: 1
     materialName: 0

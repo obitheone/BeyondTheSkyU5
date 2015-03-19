@@ -12,6 +12,7 @@ ModelImporter:
     2300000: pasted__RocaV1
     3300000: pasted__RocaV1
     4300000: pasted__RocaV1
+    6400000: pasted__RocaV1
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -34,7 +35,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public enum SkillTypes { noSkill, tractionBeam, liftingHook, blackHole, push }
+public enum SkillTypes { noSkill, tractionBeam, liftingHook, blackHole, push,pushcharge }
 
 public class TP_Skills : MonoBehaviour {
 
@@ -16,13 +16,19 @@ public class TP_Skills : MonoBehaviour {
     private Vector3 _hitpoint;
     private bool _beam = false;
     private bool _tractor = false;
+	private bool _push = false;
+	private bool _pushcharge = false;
     private float _lateral = 0f;
     private float _horizontal = 0f;
+	private float _energypush =25f;
 
     public float speed = 0.02f;
     public GameObject player;
     public GameObject righthand;
     public GameObject lefthand;
+	public GameObject blackhole;
+	public GameObject forcepush;
+
     private SkillTypes enabledSkill = SkillTypes.noSkill; 
 
 	private SK_TractorBeam _currentObjectBeamScript;
@@ -31,7 +37,7 @@ public class TP_Skills : MonoBehaviour {
 	private FX_LightningBolt _currentLightningBoltScriptL;
     //PRIVATE
 
-	public GameObject tempshoot;
+
 
     void Awake()
     {
@@ -69,23 +75,29 @@ public class TP_Skills : MonoBehaviour {
 	}
 	void FixedUpdate()	
 	{
-		if (_beam) 
-        {
-			_currentObjectBeamScript.offset_lateral=_lateral;
-			_currentObjectBeamScript.offset_horizontal=_horizontal;
-			_currentLightningBoltScriptR.target=_beamobject.transform.position;
+		if (_beam) {
+			_currentObjectBeamScript.offset_lateral = _lateral;
+			_currentObjectBeamScript.offset_horizontal = _horizontal;
+			_currentLightningBoltScriptR.target = _beamobject.transform.position;
 
-			if (Input.GetMouseButton(0)) 
-			{ 
-				_currentObjectBeamScript.energy=_currentObjectBeamScript.energy+20*Time.deltaTime;
+			if (Input.GetMouseButton (0)) { 
+				_currentObjectBeamScript.energy = _currentObjectBeamScript.energy + 20 * Time.deltaTime;
 			}
 
-			if (Input.GetMouseButtonUp (1)) 
-			{ 
-				if (_currentObjectBeamScript.energy<0) _currentObjectBeamScript.energy=0;
-				throwobject(_currentObjectBeamScript.energy);
+			if (Input.GetMouseButtonUp (1)) { 
+				if (_currentObjectBeamScript.energy < 0)
+					_currentObjectBeamScript.energy = 0;
+				throwobject (_currentObjectBeamScript.energy);
 			}
-		}
+		} else 
+			if (_push) 
+			{
+				push();
+			}
+			if (_pushcharge) 
+			{
+				pushcharge(10.0f);
+			}
 	}
 	// Update is called once per frame
 	void Update () {
@@ -117,7 +129,13 @@ public class TP_Skills : MonoBehaviour {
 			}
 			break;
 		case SkillTypes.push:
-			pushobject(50.0f);
+			_push=true;
+			break;
+		case SkillTypes.pushcharge:
+			_pushcharge=true;
+			break;
+		case SkillTypes.blackHole:
+			if (Input.GetMouseButtonDown (0)) {activateblackhole();}
 			break;
 		default: break;
 		}	
@@ -128,6 +146,11 @@ public class TP_Skills : MonoBehaviour {
 		if (_beam)
         {			
 			string temp=_currentObjectBeamScript.energy.ToString();
+			GUI.Label (new Rect (10, 10, 150, 20), "Push Force: "+temp);
+		}
+		if (_pushcharge)
+		{			
+			string temp=_energypush.ToString();
 			GUI.Label (new Rect (10, 10, 150, 20), "Push Force: "+temp);
 		}
 	}
@@ -155,9 +178,6 @@ public class TP_Skills : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit, 1000,(1<<LayerMask.NameToLayer("Beamer"))))
 		{
-			//if (hit.collider.gameObject.tag == "Beamer"){
-				//if(hit.collider.gameObject.GetComponent<SK_TractorBeam>() == null)
-				//{
 					_beamobject=hit.collider.gameObject;
 
 					if (!_beamobject.GetComponent("SK_TractorBeam")) _beamobject.AddComponent<SK_TractorBeam>();
@@ -173,8 +193,7 @@ public class TP_Skills : MonoBehaviour {
 					_currentObjectBeamScript.player=player;
 					_currentLightningBoltScriptR.target=hit.collider.gameObject.transform.position;
 					_beam=true;
-				//}
-			//}
+
 		}
 		enabledSkill = SkillTypes.noSkill;
 	}
@@ -238,53 +257,41 @@ public class TP_Skills : MonoBehaviour {
 		}
 		deactivatetractorbeam();
 	}
-	private void pushobject(float energy)
+	private void pushcharge(float energy)
 	{
-		/*Ray ray =Camera.main.ScreenPointToRay(Input.mousePosition);
+		_energypush += energy;
+		//_pushcharge=false;
+		enabledSkill = SkillTypes.noSkill;
+	}
+	private void push()
+	{
+		GameObject newProjectile = Instantiate( forcepush, righthand.transform.position, righthand.transform.rotation ) as GameObject;
+		newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection(player.transform.forward*15);
+		FX_Blackhole script= newProjectile.GetComponent("FX_Blackhole") as FX_Blackhole;
+
+		script.power = _energypush / 5;
+		script.radius = _energypush / 10;
+		script.time = 1;
+
+		enabledSkill = SkillTypes.noSkill;
+		_push = false;
+		_pushcharge = false;
+		_energypush = 25.0f;
+
+	}
+	private void activateblackhole()
+	{
+		Ray ray =Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit, 1000))
 		{
-			
-			if (hit.collider.gameObject.GetComponent<Rigidbody>()){
-				Vector3 direction=(hit.collider.transform.position-righthand.transform.position);
-				direction.Normalize();
-				hit.collider.gameObject.GetComponent<Rigidbody>().AddForce(direction*energy,ForceMode.Impulse);
-				enabledSkill = SkillTypes.noSkill;
-			}
-		}*/
-
-		/*Collider[] listOfObjects = Physics.OverlapSphere(righthand.transform.position, 500,(1<<LayerMask.NameToLayer("Beamer")));
-
-		int i = 0;
-		int listlentght = listOfObjects.Length;
-		for(i = 0; i < listlentght; ++i)
-		{
-
-			Vector3 direction=(listOfObjects[i].gameObject.transform.position-righthand.transform.position);
-			float angle = Vector3.Angle(righthand.transform.forward, direction);
-			//if ((Mathf.Abs(angle) < 90)&&(Mathf.Abs(angle) > 75)){
-			if (angle < 90 && angle > 75){
-				Debug.DrawRay(righthand.transform.position,direction);
-				Debug.Log(angle);
-				Debug.Log(listOfObjects[i].gameObject.name);
-				if (listOfObjects[i].gameObject.GetComponent<Rigidbody>()){	
-					direction.Normalize();
-					//listOfObjects[i].gameObject.GetComponent<Rigidbody>().AddForce(direction*energy,ForceMode.Impulse);
-				}
-			}
-
-
-		}*/
-
-		//encarar hacia el player y disparar//
-
-		Vector3 relativePos = righthand.transform.forward;
-	
-		GameObject newProjectile = Instantiate( tempshoot, righthand.transform.position, righthand.transform.rotation ) as GameObject;
-		newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection(player.transform.forward*50);
-
+			GameObject newProjectile = Instantiate( blackhole, hit.point, hit.transform.rotation ) as GameObject;
+			//FX_Blackhole script= newProjectile.GetComponent("FX_Blackhole") as FX_Blackhole;
+			//script.power = _energypush / 5;
+			//script.radius = _energypush / 10;
+			//script.time = 1;
+		}
 		enabledSkill = SkillTypes.noSkill;
-
 	}
 
 }
