@@ -26,6 +26,7 @@ public class TP_Skills : MonoBehaviour {
     public GameObject player;
     public GameObject righthand;
     public GameObject lefthand;
+	public ParticleEmitter lefthandpushconcentration;
 	public GameObject blackhole;
 	public GameObject forcepush;
 
@@ -257,10 +258,13 @@ public class TP_Skills : MonoBehaviour {
 		}
 		deactivatetractorbeam();
 	}
+
 	private void pushcharge(float energy)
 	{
 		_energypush += energy;
-		//_pushcharge=false;
+		lefthandpushconcentration.emit = true;
+		lefthandpushconcentration.enabled = true;
+		lefthandpushconcentration.minEnergy = (_energypush - 50) / 10;
 		enabledSkill = SkillTypes.noSkill;
 	}
 	private void push()
@@ -277,6 +281,9 @@ public class TP_Skills : MonoBehaviour {
 		_push = false;
 		_pushcharge = false;
 		_energypush = 25.0f;
+		lefthandpushconcentration.ClearParticles ();
+		lefthandpushconcentration.emit = false;
+		lefthandpushconcentration.enabled = false;
 
 	}
 	private void activateblackhole()
