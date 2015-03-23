@@ -16,6 +16,7 @@ public class UI_LifeController : MonoBehaviour {
 	public Color FullLife;
 	public Color LowLife;
 	public float colorChangeSpeed;
+	public Animator UI_LifeAnimator;
 
 	
 	private bool updateLife;
@@ -46,6 +47,7 @@ public class UI_LifeController : MonoBehaviour {
 			if (currentLife - 20f >= 0f){
 				currentLife -= 20;
 				updateLife = true;
+				UI_LifeAnimator.SetBool("damaged", true);
 			}
 		}
 		if(updateLife) UpdateLifeUI();
@@ -57,11 +59,11 @@ public class UI_LifeController : MonoBehaviour {
 	{
 		if (currentLife - (lifeText.fillAmount * 100 / maxFillAmount) > 0.1f && lifeText.fillAmount * 100 / maxFillAmount < currentLife)
 			lifeText.fillAmount += Time.deltaTime / downRate;
-			
 		else if (lifeText.fillAmount * 100 / maxFillAmount - currentLife > 0.1f && lifeText.fillAmount * 100f / maxFillAmount > currentLife)
 			lifeText.fillAmount -= Time.deltaTime / downRate;
-		else
+		else {
 			updateLife = false;
+		}
 	}
 
 	public void ChangeType(UI_LifeStyle type){
@@ -98,9 +100,11 @@ public class UI_LifeController : MonoBehaviour {
 	private void UpdateColor(){
 		//Cambio color dependiendo de la vida
 		if (lifeText.fillAmount <= 0.3f && lifeText.material.color != LowLife) {
+			UI_LifeAnimator.SetBool("LowLife", true);
 			lifeText.material.color = Color.Lerp (lifeText.material.color, LowLife, colorChangeSpeed * Time.deltaTime);
 		} else if (lifeText.fillAmount > 0.3f && lifeText.material.color != FullLife){
 			lifeText.material.color = Color.Lerp (lifeText.material.color, FullLife, colorChangeSpeed * Time.deltaTime);
+			UI_LifeAnimator.SetBool("LowLife", false);
 		}
 	}
 

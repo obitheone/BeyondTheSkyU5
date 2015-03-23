@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Dron\DN_Follow.cs" />
      <Compile Include="Assets\Scripts\Dron\DN_Life.cs" />
      <Compile Include="Assets\Scripts\Dron\DN_LookAt.cs" />
+     <Compile Include="Assets\Scripts\Dron\UI_DronLife_DamageAnim.cs" />
      <Compile Include="Assets\Scripts\Dron\UI_LifeController.cs" />
      <Compile Include="Assets\Scripts\Enemys\AgentScriptFlytaka.cs" />
      <Compile Include="Assets\Scripts\Enemys\AgentScriptOrutaka.cs" />
@@ -91,7 +92,7 @@
      <Compile Include="Assets\Scripts\PlayerSkills\SK_TractorBeam.cs" />
      <Compile Include="Assets\Scripts\Props\PROPS_Resize.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
