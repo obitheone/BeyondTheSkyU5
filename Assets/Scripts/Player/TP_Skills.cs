@@ -1,4 +1,4 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 using System.Collections;
 
@@ -269,13 +269,34 @@ public class TP_Skills : MonoBehaviour {
 	}
 	private void push()
 	{
-		GameObject newProjectile = Instantiate( forcepush, righthand.transform.position, righthand.transform.rotation ) as GameObject;
+		/*GameObject newProjectile = Instantiate( forcepush, righthand.transform.position, righthand.transform.rotation ) as GameObject;
 		newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection(player.transform.forward*15);
 		FX_Blackhole script= newProjectile.GetComponent("FX_Blackhole") as FX_Blackhole;
 
 		script.power = _energypush / 5;
 		script.radius = _energypush / 10;
 		script.time = 1;
+		*/
+
+		Vector3 explosionPos = righthand.transform.position;
+
+		Collider[] colliders = Physics.OverlapSphere (explosionPos, _energypush / 10);
+		foreach (Collider hit in colliders) {
+			if ((hit) && (hit.GetComponent<Rigidbody>())) {
+
+
+				Vector3 directionToTarget = player.transform.position - hit.gameObject.transform.position;
+				float angle = Vector3.Angle(player.transform.forward, directionToTarget);
+				//float distance = directionToTarget.magnitude;
+				
+				if (Mathf.Abs(angle) > 130)//  distance < 10)
+				{
+					//Debug.Log(Mathf.Abs(angle));
+					hit.GetComponent<Rigidbody>().AddExplosionForce (_energypush, explosionPos, _energypush / 10, 3);
+				}
+			}
+		}
+
 
 		enabledSkill = SkillTypes.noSkill;
 		_push = false;
@@ -284,6 +305,7 @@ public class TP_Skills : MonoBehaviour {
 		lefthandpushconcentration.ClearParticles ();
 		lefthandpushconcentration.emit = false;
 		lefthandpushconcentration.enabled = false;
+
 
 	}
 	private void activateblackhole()
