@@ -20,7 +20,7 @@ public class TP_Skills : MonoBehaviour {
 	private bool _pushcharge = false;
     private float _lateral = 0f;
     private float _horizontal = 0f;
-	private float _energypush =25f;
+	private float _energypush =1f;
 
     public float speed = 0.02f;
     public GameObject player;
@@ -278,21 +278,23 @@ public class TP_Skills : MonoBehaviour {
 		script.time = 1;
 		*/
 
-		Vector3 explosionPos = righthand.transform.position;
+		Vector3 explosionPos = new Vector3(righthand.transform.position.x,righthand.transform.position.y,righthand.transform.position.z);
 
-		Collider[] colliders = Physics.OverlapSphere (explosionPos, _energypush / 10);
+		Collider[] colliders = Physics.OverlapSphere (explosionPos, _energypush);
 		foreach (Collider hit in colliders) {
 			if ((hit) && (hit.GetComponent<Rigidbody>())) {
 
 
 				Vector3 directionToTarget = player.transform.position - hit.gameObject.transform.position;
 				float angle = Vector3.Angle(player.transform.forward, directionToTarget);
-				//float distance = directionToTarget.magnitude;
+				float distance = directionToTarget.magnitude;
 				
-				if (Mathf.Abs(angle) > 130)//  distance < 10)
+				if ((Mathf.Abs(angle) > 130)&&  distance < 10)
 				{
 					//Debug.Log(Mathf.Abs(angle));
-					hit.GetComponent<Rigidbody>().AddExplosionForce (_energypush, explosionPos, _energypush / 10, 3);
+					//hit.GetComponent<Rigidbody>().AddExplosionForce (_energypush, explosionPos, _energypush / 10, 3);
+					hit.GetComponent<Rigidbody>().AddForce(-1*(_energypush*(10-distance))*directionToTarget.normalized);
+
 				}
 			}
 		}
@@ -301,7 +303,7 @@ public class TP_Skills : MonoBehaviour {
 		enabledSkill = SkillTypes.noSkill;
 		_push = false;
 		_pushcharge = false;
-		_energypush = 25.0f;
+		_energypush = 1.0f;
 		lefthandpushconcentration.ClearParticles ();
 		lefthandpushconcentration.emit = false;
 		lefthandpushconcentration.enabled = false;
