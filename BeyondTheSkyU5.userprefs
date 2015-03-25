@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\TP_Skills.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dron\UI_LifeController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\TP_Skills.cs" Line="296" Column="64" />
-      <File FileName="Assets\Scripts\PlayerSkills\FX_Blackhole.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Dron\UI_LifeController.cs" Line="103" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

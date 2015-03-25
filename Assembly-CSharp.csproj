@@ -91,6 +91,10 @@
      <Compile Include="Assets\Scripts\PlayerSkills\SK_Push.cs" />
      <Compile Include="Assets\Scripts\PlayerSkills\SK_TractorBeam.cs" />
      <Compile Include="Assets\Scripts\Props\PROPS_Resize.cs" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
