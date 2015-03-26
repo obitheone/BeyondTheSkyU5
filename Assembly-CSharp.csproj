@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Mushroomtriger.cs" />
      <Compile Include="Assets\Scripts\BezierCurves\Bezier.cs" />
      <Compile Include="Assets\Scripts\BezierCurves\BezierControlPointMode.cs" />
      <Compile Include="Assets\Scripts\BezierCurves\BezierCurve.cs" />
