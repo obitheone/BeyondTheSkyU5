@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Mushroomtriger.cs" />
      <Compile Include="Assets\Scripts\BezierCurves\Bezier.cs" />
      <Compile Include="Assets\Scripts\BezierCurves\BezierControlPointMode.cs" />
      <Compile Include="Assets\Scripts\BezierCurves\BezierCurve.cs" />
@@ -92,10 +91,19 @@
      <Compile Include="Assets\Scripts\PlayerSkills\SK_Push.cs" />
      <Compile Include="Assets\Scripts\PlayerSkills\SK_TractorBeam.cs" />
      <Compile Include="Assets\Scripts\Props\PROPS_Resize.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX2_AutoRotate.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
