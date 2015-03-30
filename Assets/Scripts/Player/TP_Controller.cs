@@ -60,7 +60,7 @@ public class TP_Controller : MonoBehaviour {
 
         TP_Motor.Instance.moveVector = lAnalogDirection;
 
-		if ((lAnalogDirection.z != 0) || (lAnalogDirection.x != 0)) {Pintar_particulas_caminar();}
+		if (((lAnalogDirection.z != 0) || (lAnalogDirection.x != 0)) && ( !TP_Status.Instance.IsJumping())) {DrawFootPrints();}
 
     }
 
@@ -123,6 +123,7 @@ public class TP_Controller : MonoBehaviour {
     }
 
 	void OnControllerColliderHit (ControllerColliderHit hit){
+		Debug.Log(hit.gameObject.tag);
 		if (hit.gameObject.tag == "ground"){
 			groundType = 1;
 		}
@@ -131,7 +132,7 @@ public class TP_Controller : MonoBehaviour {
 		}
 		else groundType = 3; //volando, sin colision
 	}
-	void Pintar_particulas_caminar()
+	void DrawFootPrints()
 	{
 		if (groundType == 1) {
 			GameObject newFootPrint = Instantiate (footprint,  transform.position, transform.rotation) as GameObject;
