@@ -15,6 +15,8 @@ public class TP_Controller : MonoBehaviour {
 	public int groundType;
     public CharacterController controlador;
 	public GameObject footprint;
+	public float ratefootprint = 0.0f;
+	private float nextfootprint = 0.0f;
 
     private Skills lastMode;
 
@@ -134,8 +136,12 @@ public class TP_Controller : MonoBehaviour {
 	}
 	void DrawFootPrints()
 	{
-		if (groundType == 1) {
-			GameObject newFootPrint = Instantiate (footprint,  transform.position, transform.rotation) as GameObject;
+		if (Time.time > nextfootprint)
+		{
+			nextfootprint = Time.time + ratefootprint-Random.Range(0.01f,0.1f);
+			if (groundType == 1) {
+				GameObject newFootPrint = Instantiate (footprint,  transform.position, transform.rotation) as GameObject;
+			}
 		}
 	}
 

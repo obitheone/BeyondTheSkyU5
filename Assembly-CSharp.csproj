@@ -92,6 +92,14 @@
      <Compile Include="Assets\Scripts\PlayerSkills\SK_Push.cs" />
      <Compile Include="Assets\Scripts\PlayerSkills\SK_TractorBeam.cs" />
      <Compile Include="Assets\Scripts\Props\PROPS_Resize.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX2_Demo.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX3_AutoStopLoopedEffect.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX3_Demo.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX3_Demo_Translate.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX_Demo.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+     <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
      <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX2_AutoRotate.cs" />
      <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
      <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
@@ -101,6 +109,8 @@
      <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />

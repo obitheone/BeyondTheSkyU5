@@ -53,6 +53,8 @@
      <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Editor\CFX_SpawnSystemEditor.cs" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
