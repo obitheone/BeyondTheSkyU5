@@ -12,8 +12,9 @@ public class TP_Controller : MonoBehaviour {
     public Vector3 lAnalogDirection;
     public Vector3 rAnalogDirection;
     public float deadZone;
-
+	public int groundType;
     public CharacterController controlador;
+	public GameObject footprint;
 
     private Skills lastMode;
 
@@ -58,6 +59,8 @@ public class TP_Controller : MonoBehaviour {
             lAnalogDirection.z = 0f;
 
         TP_Motor.Instance.moveVector = lAnalogDirection;
+
+		if ((lAnalogDirection.z != 0) || (lAnalogDirection.x != 0)) {Pintar_particulas_caminar();}
 
     }
 
@@ -118,5 +121,22 @@ public class TP_Controller : MonoBehaviour {
     {
         TP_Motor.Instance.Jump();
     }
+
+	void OnControllerColliderHit (ControllerColliderHit hit){
+		if (hit.gameObject.tag == "ground"){
+			groundType = 1;
+		}
+		else if (hit.gameObject.tag == "water"){
+			groundType = 2;
+		}
+		else groundType = 3; //volando, sin colision
+	}
+	void Pintar_particulas_caminar()
+	{
+		if (groundType == 1) {
+			GameObject newFootPrint = Instantiate (footprint,  transform.position, transform.rotation) as GameObject;
+		}
+	}
+
 
 }

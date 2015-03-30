@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Camara\TP_Camera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\TP_Controller.cs">
     <Files>
-      <File FileName="Assets\Scripts\Camara\TP_Camera.cs" Line="213" Column="2" />
+      <File FileName="Assets\Scripts\Player\TP_Controller.cs" Line="132" Column="47" />
+      <File FileName="Assets\Scripts\Camara\TP_Camera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\TP_Skills.cs" Line="319" Column="105" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
