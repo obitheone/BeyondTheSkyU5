@@ -1,0 +1,314 @@
+Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Builds\Beyond the Sky_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Builds\Beyond the Sky_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Builds\Beyond the Sky_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Builds\Beyond the Sky_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Builds\Beyond the Sky_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Builds\Beyond the Sky_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.056 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Builds\Beyond the Sky_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Builds\Beyond the Sky_Data\Managed\System.dll (this message is harmless)
+640 x 400
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MenuManager:fillResolutions() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:71)
+MenuManager:Start() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:28)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Menus/MenuManager.cs Line: 71)
+
+1280 x 720
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MenuManager:fillResolutions() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:71)
+MenuManager:Start() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:28)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Menus/MenuManager.cs Line: 71)
+
+1280 x 800
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MenuManager:fillResolutions() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:71)
+MenuManager:Start() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:28)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Menus/MenuManager.cs Line: 71)
+
+1360 x 768
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MenuManager:fillResolutions() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:71)
+MenuManager:Start() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:28)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Menus/MenuManager.cs Line: 71)
+
+1366 x 768
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MenuManager:fillResolutions() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:71)
+MenuManager:Start() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:28)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Menus/MenuManager.cs Line: 71)
+
+1440 x 900
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MenuManager:fillResolutions() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:71)
+MenuManager:Start() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:28)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Menus/MenuManager.cs Line: 71)
+
+1600 x 900
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MenuManager:fillResolutions() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:71)
+MenuManager:Start() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:28)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Menus/MenuManager.cs Line: 71)
+
+1680 x 1050
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MenuManager:fillResolutions() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:71)
+MenuManager:Start() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:28)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Menus/MenuManager.cs Line: 71)
+
+1920 x 1080
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MenuManager:fillResolutions() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:71)
+MenuManager:Start() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Menus\MenuManager.cs:28)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Menus/MenuManager.cs Line: 71)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2198 -> priority: 1 
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.910104 ms
+System memory in use before: 18.2 MB.
+System memory in use after: 18.2 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 817.
+Total: 0.877531 ms (FindLiveObjects: 0.125925 ms CreateObjectMapping: 0.106977 ms MarkObjects: 0.565283 ms  DeleteObjects: 0.076581 ms)
+
+El modo de Camara es: Libre
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TP_Controller:InputCamara() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:107)
+TP_Controller:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:38)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Player/TP_Controller.cs Line: 107)
+
+El modo de Camara es: Orbit
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TP_Controller:InputCamara() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:107)
+TP_Controller:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:38)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Player/TP_Controller.cs Line: 107)
+
+El modo de Camara es: Dios
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TP_Controller:InputCamara() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:107)
+TP_Controller:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:38)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Player/TP_Controller.cs Line: 107)
+
+El modo de Camara es: Puntos
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TP_Controller:InputCamara() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:107)
+TP_Controller:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:38)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Player/TP_Controller.cs Line: 107)
+
+El modo de Camara es: Cinema
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TP_Controller:InputCamara() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:107)
+TP_Controller:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:38)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Player/TP_Controller.cs Line: 107)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+IndexOutOfRangeException: Array index is out of range.
+  at BezierSpline.GetPoint (Single t) [0x0003f] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\BezierCurves\BezierSpline.cs:144 
+  at TP_Camera.LateUpdate () [0x00622] in C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Camara\TP_Camera.cs:179 
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/BezierCurves/BezierSpline.cs Line: 144)
+
+El modo de Camara es: Follow
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TP_Controller:InputCamara() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:107)
+TP_Controller:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:38)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Player/TP_Controller.cs Line: 107)
+
+El modo de Camara es: Libre
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TP_Controller:InputCamara() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:107)
+TP_Controller:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:38)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Player/TP_Controller.cs Line: 107)
+
+El modo de Camara es: Orbit
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TP_Controller:InputCamara() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:107)
+TP_Controller:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:38)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Player/TP_Controller.cs Line: 107)
+
+El modo de Camara es: Dios
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TP_Controller:InputCamara() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:107)
+TP_Controller:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Player\TP_Controller.cs:38)
+ 
+(Filename: C:/Users/rcano/Documents/GitHub/BeyondTheSkyU5/Assets/Scripts/Player/TP_Controller.cs Line: 107)
+
+Level 'Menu_joc' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+UnityEngine.Application:LoadLevelAsync(String, Int32, Boolean, Boolean)
+UnityEngine.Application:LoadLevel(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineApplication.gen.cs:59)
+Status_dbg:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Debug\Status_dbg.cs:67)
+
+[C:/buildslave/unity/build/Runtime/Misc/Player.cpp line 274] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineApplication.gen.cs Line: 59)
+
+Level 'Menu_joc' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+UnityEngine.Application:LoadLevelAsync(String, Int32, Boolean, Boolean)
+UnityEngine.Application:LoadLevel(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineApplication.gen.cs:59)
+Status_dbg:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Debug\Status_dbg.cs:67)
+
+[C:/buildslave/unity/build/Runtime/Misc/Player.cpp line 274] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineApplication.gen.cs Line: 59)
+
+Level 'Menu_joc' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+UnityEngine.Application:LoadLevelAsync(String, Int32, Boolean, Boolean)
+UnityEngine.Application:LoadLevel(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineApplication.gen.cs:59)
+Status_dbg:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Debug\Status_dbg.cs:67)
+
+[C:/buildslave/unity/build/Runtime/Misc/Player.cpp line 274] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineApplication.gen.cs Line: 59)
+
+Level 'Menu_joc' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+UnityEngine.Application:LoadLevelAsync(String, Int32, Boolean, Boolean)
+UnityEngine.Application:LoadLevel(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineApplication.gen.cs:59)
+Status_dbg:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Debug\Status_dbg.cs:67)
+
+[C:/buildslave/unity/build/Runtime/Misc/Player.cpp line 274] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineApplication.gen.cs Line: 59)
+
+Level 'Menu_joc' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+UnityEngine.Application:LoadLevelAsync(String, Int32, Boolean, Boolean)
+UnityEngine.Application:LoadLevel(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineApplication.gen.cs:59)
+Status_dbg:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Debug\Status_dbg.cs:67)
+
+[C:/buildslave/unity/build/Runtime/Misc/Player.cpp line 274] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineApplication.gen.cs Line: 59)
+
+Level 'Menu_joc' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+UnityEngine.Application:LoadLevelAsync(String, Int32, Boolean, Boolean)
+UnityEngine.Application:LoadLevel(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineApplication.gen.cs:59)
+Status_dbg:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Debug\Status_dbg.cs:67)
+
+[C:/buildslave/unity/build/Runtime/Misc/Player.cpp line 274] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineApplication.gen.cs Line: 59)
+
+Level 'Menu_joc' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+UnityEngine.Application:LoadLevelAsync(String, Int32, Boolean, Boolean)
+UnityEngine.Application:LoadLevel(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineApplication.gen.cs:59)
+Status_dbg:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Debug\Status_dbg.cs:67)
+
+[C:/buildslave/unity/build/Runtime/Misc/Player.cpp line 274] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineApplication.gen.cs Line: 59)
+
+Level 'Menu_joc' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+UnityEngine.Application:LoadLevelAsync(String, Int32, Boolean, Boolean)
+UnityEngine.Application:LoadLevel(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineApplication.gen.cs:59)
+Status_dbg:Update() (at C:\Users\rcano\Documents\GitHub\BeyondTheSkyU5\Assets\Scripts\Debug\Status_dbg.cs:67)
+
+[C:/buildslave/unity/build/Runtime/Misc/Player.cpp line 274] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineApplication.gen.cs Line: 59)
+
+Waiting for finish
