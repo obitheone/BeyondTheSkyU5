@@ -5,7 +5,6 @@ public enum Skills { Follow = 1, Libre, Orbit, Dios, Puntos, Cinema, Targetting 
 
 public class TP_Camera : MonoBehaviour
 {
-
     public static TP_Camera Instance;
     public Transform[] points = new Transform[5];
     private int currentPointIndex;
