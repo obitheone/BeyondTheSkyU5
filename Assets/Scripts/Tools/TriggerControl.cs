@@ -60,7 +60,6 @@ public class TriggerControl : MonoBehaviour {
         }
     }
 
-
     void OnTriggerEnter(Collider col){ //CUANDO ENTRO EN EL TRIGGER EJECUTO LAS OPCIONES SELECCIONADAS
         for (int i = 0; i < opciones.Length; ++i)
         {
@@ -96,6 +95,12 @@ public class TriggerControl : MonoBehaviour {
                     {
                         Debug.LogError("CameraType must be defined on Inspector!");
                         UnityEditor.EditorApplication.isPlaying = false;
+                    }
+                    break;
+                case OptionType.ShowHUDMessage:
+                    if (opciones[i].gameobject != null)
+                    {
+                        Instantiate(opciones[i].gameobject, this.transform.position, this.transform.rotation);
                     }
                     break;
             }

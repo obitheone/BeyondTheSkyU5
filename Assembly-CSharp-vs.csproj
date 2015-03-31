@@ -92,6 +92,7 @@
      <Compile Include="Assets\Scripts\PlayerSkills\SK_Push.cs" />
      <Compile Include="Assets\Scripts\PlayerSkills\SK_TractorBeam.cs" />
      <Compile Include="Assets\Scripts\Props\PROPS_Resize.cs" />
+     <Compile Include="Assets\Scripts\Tools\LookAt.cs" />
      <Compile Include="Assets\Scripts\Tools\TriggerControl.cs" />
      <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX2_Demo.cs" />
      <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX3_AutoStopLoopedEffect.cs" />
