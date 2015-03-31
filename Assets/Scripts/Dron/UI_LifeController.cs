@@ -50,9 +50,12 @@ public class UI_LifeController : MonoBehaviour {
 				UI_LifeAnimator.SetBool("damaged", true);
 			}
 		}
+
 		if(updateLife) UpdateLifeUI();
 
 		UpdateColor();
+
+		this.transform.LookAt (Camera.main.transform);
 	}
 
 	private void UpdateLifeUI()

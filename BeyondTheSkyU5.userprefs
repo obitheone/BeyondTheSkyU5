@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\TP_Controller.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dron\UI_LifeController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Camara\TP_Camera.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\TP_Controller.cs" Line="18" Column="32" />
+      <File FileName="Assets\Scripts\Player\TP_Controller.cs" Line="34" Column="66" />
+      <File FileName="Assets\Scripts\Dron\UI_LifeController.cs" Line="116" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

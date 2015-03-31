@@ -20,7 +20,7 @@ public class TP_Controller : MonoBehaviour {
 	public float ratefootprint = 1.0f;
 	private int Poolindex = 0;
 	private float nextfootprint = 0.0f;
-    private Skills lastMode;
+    private CameraTypes lastMode;
 
     void Awake()
     {
@@ -99,7 +99,7 @@ public class TP_Controller : MonoBehaviour {
                 case false:
                     TP_Status.Instance.SetTargetting(true);
                     lastMode = TP_Camera.Instance.modoCamara;
-                    TP_Camera.Instance.modoCamara = Skills.Targetting;
+                    TP_Camera.Instance.modoCamara = CameraTypes.Targetting;
                     break;
             }
         }
@@ -111,10 +111,10 @@ public class TP_Controller : MonoBehaviour {
         rAnalogDirection = new Vector3(Input.GetAxisRaw("Mouse X"), 0f, Input.GetAxisRaw("Mouse Y"));
         Debug.DrawRay(transform.position, rAnalogDirection * 10f, Color.blue);
 
-        if (Input.GetKeyUp(KeyCode.C) && TP_Camera.Instance.modoCamara != Skills.Targetting)
+        if (Input.GetKeyUp(KeyCode.C) && TP_Camera.Instance.modoCamara != CameraTypes.Targetting)
         {
-            if (TP_Camera.Instance.modoCamara == Skills.Cinema)
-                TP_Camera.Instance.modoCamara = Skills.Follow;
+            if (TP_Camera.Instance.modoCamara == CameraTypes.Cinema)
+                TP_Camera.Instance.modoCamara = CameraTypes.Follow;
             else
                 TP_Camera.Instance.modoCamara += 1;
 

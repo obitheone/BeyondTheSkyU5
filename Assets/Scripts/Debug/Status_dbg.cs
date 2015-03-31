@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Status_dbg : MonoBehaviour {
-	private Skills modecamera;
+	private CameraTypes modecamera;
 	private string mode_str; 
 	public GUIStyle blanc;
 	public GUIStyle verd;
@@ -15,25 +15,25 @@ void OnGUI () {
 		modecamera = TP_Camera.Instance.GetMode();
 
 		switch (modecamera) {
-			case Skills.Follow:
+			case CameraTypes.Follow:
 								mode_str = "Camera: Follow";
 								break;
-			case Skills.Libre:
+			case CameraTypes.Libre:
 								mode_str = "Camera: Libre";
 								break;
-			case Skills.Orbit:
+			case CameraTypes.Orbit:
 								mode_str = "Camera: Orbit";
 								break;
-			case Skills.Dios:
+			case CameraTypes.Dios:
 								mode_str = "Camera: GOD";
 								break;
-			case Skills.Puntos:
+			case CameraTypes.Puntos:
 								mode_str = "Camera: Puntos";
 								break;
-			case Skills.Cinema:
+			case CameraTypes.Cinema:
 								mode_str = "Camera: Cinematica";
 								break;
-			case Skills.Targetting:
+			case CameraTypes.Targetting:
 								mode_str = "Camera: Targetting";
 								break;
 		}

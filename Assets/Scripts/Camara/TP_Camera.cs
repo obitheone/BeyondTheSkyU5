@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum Skills { Follow = 1, Libre, Orbit, Dios, Puntos, Cinema, Targetting }
+public enum CameraTypes { Follow = 1, Libre, Orbit, Dios, Puntos, Cinema, Targetting }
 
 public class TP_Camera : MonoBehaviour
 {
@@ -30,7 +30,7 @@ public class TP_Camera : MonoBehaviour
     float distanciaMin, distanciaMax;
 
     public bool godMode;
-    public Skills modoCamara = Skills.Follow;
+    public CameraTypes modoCamara = CameraTypes.Follow;
 
     void Awake()
     {
@@ -49,8 +49,8 @@ public class TP_Camera : MonoBehaviour
 
     void Update()
     {
-        if (modoCamara != Skills.Dios) godMode = false;
-		if (modoCamara != Skills.Cinema)SplineWalker.Instance.enabled = false;
+        if (modoCamara != CameraTypes.Dios) godMode = false;
+		if (modoCamara != CameraTypes.Cinema)SplineWalker.Instance.enabled = false;
     }
 
     // Update is called once per frame
@@ -59,7 +59,7 @@ public class TP_Camera : MonoBehaviour
 
         switch (modoCamara)
         {
-            case Skills.Follow:
+            case CameraTypes.Follow:
 
                 x += Input.GetAxis("Horizontal") * velX * distancia * Time.deltaTime;
                 //y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
@@ -87,7 +87,7 @@ public class TP_Camera : MonoBehaviour
                 offset = Camera.main.transform.position - objetivo.transform.position;
                 break;
 
-            case Skills.Libre:
+            case CameraTypes.Libre:
 
                 //y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
                 //y = ClampAngle(y, yMinLimit, yMaxLimit);
@@ -104,7 +104,7 @@ public class TP_Camera : MonoBehaviour
 
                 break;
 
-            case Skills.Orbit:
+            case CameraTypes.Orbit:
 
                 x += Input.GetAxis("Mouse X") * velOrbitX * distancia * Time.deltaTime;
                 //Debug.Log("Valor de X: " + x + " Rotacion Skyler en X: " + objetivo.transform.localEulerAngles.y);
@@ -122,7 +122,7 @@ public class TP_Camera : MonoBehaviour
                 transform.position = Vector3.Slerp(transform.position, position, 5 * Time.deltaTime);
                 break;
 
-            case Skills.Dios:
+            case CameraTypes.Dios:
 
                 godMode = true;
                 Vector3 angles = transform.localEulerAngles;
@@ -145,7 +145,7 @@ public class TP_Camera : MonoBehaviour
 
                 break;
 
-            case Skills.Puntos:
+            case CameraTypes.Puntos:
                 //Punto de visualización en el mapa
                 if (Input.GetKeyUp(KeyCode.KeypadPlus))
                 {
@@ -172,7 +172,7 @@ public class TP_Camera : MonoBehaviour
                 }
                 break;
 
-            case Skills.Cinema:
+            case CameraTypes.Cinema:
 
                 //codigo de movimiento de cámara aqui
 			Debug.Log (Vector3.Distance(transform.position,SplineWalker.Instance.spline.GetPoint(0f)));
@@ -184,7 +184,7 @@ public class TP_Camera : MonoBehaviour
 				}
                 break;
 
-            case Skills.Targetting:
+            case CameraTypes.Targetting:
 
                 transform.position = Vector3.Slerp(transform.position, targettingPoint.position, targettingSmooth * Time.deltaTime);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targettingPoint.rotation, rotateSmooth * Time.deltaTime);
@@ -193,7 +193,12 @@ public class TP_Camera : MonoBehaviour
 
         }
     }
-	public Skills GetMode()
+
+    public void SetMode(CameraTypes mode){
+        modoCamara = mode;
+    }
+
+	public CameraTypes GetMode()
 	{
 		return modoCamara;
 	}

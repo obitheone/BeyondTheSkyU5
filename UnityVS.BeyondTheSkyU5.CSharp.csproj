@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{381E7151-C845-A867-AF22-1EDBD6AE4F28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityVersion>5.0.0f4</UnityVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_0_0;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_0_0;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scripts\BezierCurves\Bezier.cs" />
+    <Compile Include="Assets\Scripts\BezierCurves\BezierControlPointMode.cs" />
+    <Compile Include="Assets\Scripts\BezierCurves\BezierCurve.cs" />
+    <Compile Include="Assets\Scripts\BezierCurves\BezierSpline.cs" />
+    <Compile Include="Assets\Scripts\BezierCurves\Line.cs" />
+    <Compile Include="Assets\Scripts\BezierCurves\SplineDecorator.cs" />
+    <Compile Include="Assets\Scripts\BezierCurves\SplineWalker.cs" />
+    <Compile Include="Assets\Scripts\BezierCurves\SplineWalkerMode.cs" />
+    <Compile Include="Assets\Scripts\Camara\TP_Camera.cs" />
+    <Compile Include="Assets\Scripts\Debug\HUDFPS.cs" />
+    <Compile Include="Assets\Scripts\Debug\Status_dbg.cs" />
+    <Compile Include="Assets\Scripts\Debug\newdbg.cs" />
+    <Compile Include="Assets\Scripts\Dron\DN_Follow.cs" />
+    <Compile Include="Assets\Scripts\Dron\DN_Life.cs" />
+    <Compile Include="Assets\Scripts\Dron\DN_LookAt.cs" />
+    <Compile Include="Assets\Scripts\Dron\UI_DronLife_DamageAnim.cs" />
+    <Compile Include="Assets\Scripts\Dron\UI_LifeController.cs" />
+    <Compile Include="Assets\Scripts\Enemys\AgentScriptFlytaka.cs" />
+    <Compile Include="Assets\Scripts\Enemys\AgentScriptOrutaka.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Destroy_delay.cs" />
+    <Compile Include="Assets\Scripts\Enemys\EnemyStats.cs" />
+    <Compile Include="Assets\Scripts\Enemys\ProximityDetectorFlytaka.cs" />
+    <Compile Include="Assets\Scripts\Enemys\ProximityDetectorOrutaka.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Status_Controller_Flytaka.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Status_Controller_Orutaka.cs" />
+    <Compile Include="Assets\Scripts\Menus\Change_color_tittle.cs" />
+    <Compile Include="Assets\Scripts\Menus\Credits.cs" />
+    <Compile Include="Assets\Scripts\Menus\FinNivel.cs" />
+    <Compile Include="Assets\Scripts\Menus\Menu.cs" />
+    <Compile Include="Assets\Scripts\Menus\MenuHelp.cs" />
+    <Compile Include="Assets\Scripts\Menus\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\Menus\MenuManagerOld.cs" />
+    <Compile Include="Assets\Scripts\Menus\MenuReturn.cs" />
+    <Compile Include="Assets\Scripts\Menus\Portada.cs" />
+    <Compile Include="Assets\Scripts\Menus\ReturnMenu.cs" />
+    <Compile Include="Assets\Scripts\Player\TP_Controller.cs" />
+    <Compile Include="Assets\Scripts\Player\TP_Motor.cs" />
+    <Compile Include="Assets\Scripts\Player\TP_Skills.cs" />
+    <Compile Include="Assets\Scripts\Player\TP_Status.cs" />
+    <Compile Include="Assets\Scripts\PlayerSkills\FX_Blackhole.cs" />
+    <Compile Include="Assets\Scripts\PlayerSkills\FX_LightningBolt.cs" />
+    <Compile Include="Assets\Scripts\PlayerSkills\Perlin.cs" />
+    <Compile Include="Assets\Scripts\PlayerSkills\SK_LiftingHook.cs" />
+    <Compile Include="Assets\Scripts\PlayerSkills\SK_Push.cs" />
+    <Compile Include="Assets\Scripts\PlayerSkills\SK_TractorBeam.cs" />
+    <Compile Include="Assets\Scripts\Props\PROPS_Resize.cs" />
+    <Compile Include="Assets\Scripts\Tools\TriggerControl.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX2_Demo.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX3_AutoStopLoopedEffect.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX3_Demo.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX3_Demo_Translate.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX_Demo.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX2_AutoRotate.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
+    <Compile Include="Assets\ThirdPartyEffects\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+    <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
+    <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
+    <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
+</Project>
