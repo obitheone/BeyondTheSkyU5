@@ -18,7 +18,7 @@ void OnGUI () {
 			case CameraTypes.Follow:
 								mode_str = "Camera: Follow";
 								break;
-			case CameraTypes.Libre:
+			case CameraTypes.Camera2D:
 								mode_str = "Camera: Libre";
 								break;
 			case CameraTypes.Orbit:

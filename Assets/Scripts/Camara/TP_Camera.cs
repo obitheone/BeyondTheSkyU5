@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum CameraTypes { Follow = 1, Libre, Orbit, Dios, Puntos, Cinema, Targetting }
+public enum CameraTypes { Follow = 1, Camera2D, Orbit, Dios, Puntos, Cinema, Targetting }
 
 public class TP_Camera : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class TP_Camera : MonoBehaviour
     private bool isResetingCamera;
 
     private bool cameraPosChanged;
+    private int rotationDir;
     public GameObject objetivo;
     public float velX, velY;
     public float velOrbitX, velOrbitY;
@@ -31,6 +32,8 @@ public class TP_Camera : MonoBehaviour
 
     public bool godMode;
     public CameraTypes modoCamara = CameraTypes.Follow;
+    private bool fixedLookAt = false;
+    private Transform lookAtObject;
 
     void Awake()
     {
@@ -87,13 +90,15 @@ public class TP_Camera : MonoBehaviour
                 offset = Camera.main.transform.position - objetivo.transform.position;
                 break;
 
-            case CameraTypes.Libre:
+            case CameraTypes.Camera2D:
 
-                //y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-                //y = ClampAngle(y, yMinLimit, yMaxLimit);
-                y = 30f; // cambio manual de la inclinación
+                y = 14f; // cambio manual de la inclinación
 
                 rotation = Quaternion.Euler(y, x, 0);
+
+                //DOESN'T WORK AS EXPECTED
+                //if (rotationDir == -1) x = objetivo.transform.localEulerAngles.y + 90;
+                //else if (rotationDir == 1) x = objetivo.transform.localEulerAngles.y - 90;
 
                 //distancia = Mathf.Clamp(distancia - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
 
@@ -146,6 +151,8 @@ public class TP_Camera : MonoBehaviour
                 break;
 
             case CameraTypes.Puntos:
+
+                if (fixedLookAt) this.transform.LookAt(lookAtObject);
                 //Punto de visualización en el mapa
                 if (Input.GetKeyUp(KeyCode.KeypadPlus))
                 {
@@ -196,6 +203,23 @@ public class TP_Camera : MonoBehaviour
 
     public void SetMode(CameraTypes mode){
         modoCamara = mode;
+    }
+
+    public void ActiveCamera2D(int direction)
+    {
+        modoCamara = CameraTypes.Camera2D;
+        rotationDir = direction;
+    }
+
+    public void LookAtObject(Transform position, bool enable)
+    {
+        if (enable)
+        {
+            fixedLookAt = true;
+            lookAtObject = position;
+        }
+        else
+            fixedLookAt = false;
     }
 
 	public CameraTypes GetMode()

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public enum TriggerType {Camera = 1, HUD, Player, Particle, MultiOptions}
-public enum OptionType { DisableMovement = 1, FixedCamera, ChangeCameraType, RotateCamera, ShowHUDMessage }
+public enum OptionType { DisableMovement = 1, FixedCamera, ChangeCameraType, Camera2D, ShowHUDMessage }
 
 public class TriggerControl : MonoBehaviour {
 
@@ -14,118 +14,150 @@ public class TriggerControl : MonoBehaviour {
     {
         public OptionType option;
         public bool enable;
-        public GameObject PlayerPos;
-        public GameObject CameraPos;
+        public GameObject playerPos;
+        public GameObject cameraPos;
+        public GameObject lookAtObject;
+        public Vector3 messagePos;
         public CameraTypes CameraType;
-        public float degrees;
-        public Vector3 axis;
-        public GameObject gameobject;
+        public int Side2D;
+        public GameObject message;
         public bool reversibleChange;
 
         public Option() { }
 
-        public Option(Option opt)
+        /*public Option(Option opt)
         {
             // TODO: Complete member initialization
             this.option = opt.option;
             this.enable = opt.enable;
-            this.PlayerPos = opt.PlayerPos;
-            this.CameraPos = opt.CameraPos;
+            this.playerPos = opt.playerPos;
+            this.cameraPos = opt.cameraPos;
             this.CameraType = opt.CameraType;
-            this.degrees = opt.degrees;
+            this.Side2D = opt.Side2D;
             this.axis = opt.axis;
-            this.gameobject = opt.gameobject;
+            this.message = opt.message;
             this.reversibleChange = opt.reversibleChange;
-        }
+        }*/
     }
 
     public Option[] opciones;
     private Option[] opcionesReversibles;
+    private bool insideTrigger = false;
+    private bool madeLookAt = false;
 
     void Start()
     {
         opcionesReversibles = new Option[opciones.Length];
         for (int i = 0; i < opcionesReversibles.Length; ++i)
         {
-            opcionesReversibles[i] = new Option();// opciones[i].option;
+            opcionesReversibles[i] = new Option();
             opcionesReversibles[i].option = 0;
-            opcionesReversibles[i].enable = false;//opciones[i].enable;
-            opcionesReversibles[i].PlayerPos = new GameObject();//opciones[i].PlayerPos;
-            opcionesReversibles[i].CameraPos = new GameObject();//opciones[i].CameraPos;
-            opcionesReversibles[i].CameraType = 0;//opciones[i].CameraType;
-            opcionesReversibles[i].degrees = 0;//opciones[i].degrees;
-            opcionesReversibles[i].axis = Vector3.zero;//opciones[i].axis;
-            opcionesReversibles[i].gameobject = new GameObject();//opciones[i].gameobject;
-            opcionesReversibles[i].reversibleChange = false;//opciones[i].reversibleChange;
+            opcionesReversibles[i].enable = false;
+            opcionesReversibles[i].playerPos = new GameObject();
+            opcionesReversibles[i].cameraPos = new GameObject();
+            opcionesReversibles[i].lookAtObject = new GameObject();
+            opcionesReversibles[i].messagePos = Vector3.zero;
+            opcionesReversibles[i].CameraType = 0;
+            opcionesReversibles[i].Side2D = 0;
+            opcionesReversibles[i].message = new GameObject();
+            opcionesReversibles[i].reversibleChange = false;
         }
     }
 
     void OnTriggerEnter(Collider col){ //CUANDO ENTRO EN EL TRIGGER EJECUTO LAS OPCIONES SELECCIONADAS
+        insideTrigger = true;
         for (int i = 0; i < opciones.Length; ++i)
         {
-            switch (opciones[i].option)
+            if (opciones[i].enable)//Si la opción está habilitada
             {
-                case OptionType.FixedCamera:
-                    if (opciones[i].CameraPos != null)
-                    {
-                        //si la opcion tiene que ser reversible, guardamos el valor actual
+                switch (opciones[i].option)
+                {
+                    case OptionType.FixedCamera:
+                        if (opciones[i].cameraPos != null)
+                        {
+                            //si la opcion tiene que ser reversible, guardamos el estado actual
+                            if (opciones[i].reversibleChange)
+                            {
+                                opcionesReversibles[i].option = opciones[i].option;
+                                opcionesReversibles[i].reversibleChange = true;
+                                opcionesReversibles[i].cameraPos.gameObject.transform.position = TP_Camera.Instance.transform.position;
+                                opcionesReversibles[i].cameraPos.gameObject.transform.rotation = TP_Camera.Instance.transform.rotation;
+                                opcionesReversibles[i].CameraType = TP_Camera.Instance.GetMode();
+                            }
+
+                            TP_Camera.Instance.transform.position = opciones[i].cameraPos.transform.position;
+                            TP_Camera.Instance.transform.rotation = opciones[i].cameraPos.transform.rotation;
+                            TP_Camera.Instance.SetMode(CameraTypes.Puntos);
+                            if (opciones[i].lookAtObject != null) TP_Camera.Instance.LookAtObject(opciones[i].lookAtObject.transform, true);
+                        }
+                        else
+                        {
+                            Debug.LogError("Camera position must be set in Inspector");
+                            UnityEditor.EditorApplication.isPlaying = false;
+                        }
+                        break;
+                    case OptionType.ChangeCameraType:
+                        if (opciones[i].CameraType != 0)
+                        {
+                            if (opciones[i].reversibleChange)
+                            {
+                                opcionesReversibles[i].option = opciones[i].option;
+                                opcionesReversibles[i].reversibleChange = true;
+                                opcionesReversibles[i].CameraType = TP_Camera.Instance.GetMode();
+                            }
+                            TP_Camera.Instance.modoCamara = opciones[i].CameraType;
+                        }
+                        else
+                        {
+                            Debug.LogError("CameraType must be defined on Inspector!");
+                            UnityEditor.EditorApplication.isPlaying = false;
+                        }
+                        break;
+                    case OptionType.ShowHUDMessage:
+                        if (opciones[i].message != null)
+                        {
+                            Instantiate(opciones[i].message, opciones[i].messagePos, Quaternion.identity);
+                        }
+                        else
+                        {
+                            Debug.LogError("The message prefab must be atached!!");
+                            UnityEditor.EditorApplication.isPlaying = false;
+                        }
+                        break;
+                    case OptionType.Camera2D:
                         if (opciones[i].reversibleChange)
                         {
                             opcionesReversibles[i].option = opciones[i].option;
                             opcionesReversibles[i].reversibleChange = true;
-                            opcionesReversibles[i].CameraPos.gameObject.transform.position = TP_Camera.Instance.transform.position;
-                            opcionesReversibles[i].CameraPos.gameObject.transform.rotation = TP_Camera.Instance.transform.rotation;
                             opcionesReversibles[i].CameraType = TP_Camera.Instance.GetMode();
-                            Debug.Log("Opcion " + i + ": CameraPos: " + opcionesReversibles[i].CameraPos.gameObject.transform.position);
-                            Debug.Log("Opcion " + i + ": Camera Mode: " + opcionesReversibles[i].CameraType);
                         }
-                        TP_Camera.Instance.transform.position = opciones[i].CameraPos.transform.position;
-                        TP_Camera.Instance.transform.rotation = opciones[i].CameraPos.transform.rotation;
-                        TP_Camera.Instance.SetMode(CameraTypes.Puntos);
-                    }
-                    else
-                        Debug.LogWarning("Camera position must be set in Inspector");
-                    break;
-                case OptionType.ChangeCameraType:
-                    if (opciones[i].CameraType != 0)
-                    {
-                        TP_Camera.Instance.modoCamara = opciones[i].CameraType;
-                    }
-                    else
-                    {
-                        Debug.LogError("CameraType must be defined on Inspector!");
-                        UnityEditor.EditorApplication.isPlaying = false;
-                    }
-                    break;
-                case OptionType.ShowHUDMessage:
-                    if (opciones[i].gameobject != null)
-                    {
-                        Instantiate(opciones[i].gameobject, this.transform.position, this.transform.rotation);
-                    }
-                    break;
+                        TP_Camera.Instance.ActiveCamera2D(opciones[i].Side2D);
+                        break;
+                }
             }
         }
     }
     
     void OnTriggerExit() //SI HAY OPCIONES REVERSIBLES AL SALIR DEL TRIGGER, LAS REVIERTO
     {
+        insideTrigger = false;
         for (int i = 0; i < opciones.Length; ++i)
         {
-            Debug.Log("Opcion " + i + ": Es reversible: " + opcionesReversibles[i].reversibleChange);
-            Debug.Log("Opcion " + i + ": CameraPos: " + opcionesReversibles[i].CameraPos.gameObject.transform.position);
-            Debug.Log("Opcion " + i + ": CameraPos: " + opcionesReversibles[i].CameraPos);
-            Debug.Log("Opcion " + i + ": Camera Mode: " + opcionesReversibles[i].CameraType);
             if (opcionesReversibles[i].reversibleChange)
             {
                 switch (opcionesReversibles[i].option)
                 {
                     case OptionType.FixedCamera:
-                        TP_Camera.Instance.transform.position = opcionesReversibles[i].CameraPos.gameObject.transform.position;
-                        TP_Camera.Instance.transform.rotation = opcionesReversibles[i].CameraPos.transform.rotation;
+                        TP_Camera.Instance.transform.position = opcionesReversibles[i].cameraPos.gameObject.transform.position;
+                        TP_Camera.Instance.transform.rotation = opcionesReversibles[i].cameraPos.transform.rotation;
                         TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;
+                        TP_Camera.Instance.LookAtObject(this.transform, false);
                         break;
 
                     case OptionType.ChangeCameraType:
+                        TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;
+                        break;
+                    case OptionType.Camera2D:
                         TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;
                         break;
                 }
@@ -135,11 +167,7 @@ public class TriggerControl : MonoBehaviour {
 
 	//Cambio del Icono segun el tipo de trigger.
 	void OnDrawGizmos(){
-		switch (type){
-			case TriggerType.HUD:
-				Gizmos.DrawIcon (this.transform.position, "InGameMessage.tiff", true);
-				break;
-		}
+		Gizmos.DrawIcon (this.transform.position, "triggerIcon.tiff", true);
 	}
 
 
