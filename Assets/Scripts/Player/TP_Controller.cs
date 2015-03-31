@@ -15,7 +15,7 @@ public class TP_Controller : MonoBehaviour {
 	public int groundType;
     public CharacterController controlador;
 	public GameObject footprint;
-	public float ratefootprint = 0.0f;
+	public float ratefootprint = 1.0f;
 	private float nextfootprint = 0.0f;
 
     private Skills lastMode;
@@ -125,20 +125,20 @@ public class TP_Controller : MonoBehaviour {
     }
 
 	void OnControllerColliderHit (ControllerColliderHit hit){
-		Debug.Log(hit.gameObject.tag);
+		//Debug.Log(hit.gameObject.tag);
 		if (hit.gameObject.tag == "ground"){
 			groundType = 1;
 		}
 		else if (hit.gameObject.tag == "water"){
 			groundType = 2;
 		}
-		else groundType = 3; //volando, sin colision
+		else groundType = 3; 
 	}
 	void DrawFootPrints()
 	{
 		if (Time.time > nextfootprint)
 		{
-			nextfootprint = Time.time + ratefootprint-Random.Range(0.01f,0.1f);
+			nextfootprint = Time.time + ratefootprint-Random.Range(0.05f,0.1f);
 			if (groundType == 1) {
 				GameObject newFootPrint = Instantiate (footprint,  transform.position, transform.rotation) as GameObject;
 			}
