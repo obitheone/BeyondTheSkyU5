@@ -64,7 +64,7 @@ public class TP_Camera : MonoBehaviour
                 x += Input.GetAxis("Horizontal") * velX * distancia * Time.deltaTime;
                 //y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
                 //y = ClampAngle(y, yMinLimit, yMaxLimit);
-                y = 20f; // cambio manual de la inclinación
+                y = 14f; // cambio manual de la inclinación
 
                 Quaternion rotation = Quaternion.Euler(y, x, 0); //rotación por defecto
 
@@ -77,7 +77,7 @@ public class TP_Camera : MonoBehaviour
                     /*if (Vector3.Angle(objetivo.transform.forward, transform.forward) < 5f)*/ isResetingCamera = false;
                 }
 
-                Vector3 negDistance = new Vector3(0.0f, 0.0f, -distancia);
+                Vector3 negDistance = new Vector3(0.0f, 1.0f, -distancia);
                 Vector3 position = rotation * negDistance + objetivo.transform.position;
 
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, smoothX * Time.deltaTime);
@@ -188,6 +188,7 @@ public class TP_Camera : MonoBehaviour
 
                 transform.position = Vector3.Slerp(transform.position, targettingPoint.position, targettingSmooth * Time.deltaTime);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targettingPoint.rotation, rotateSmooth * Time.deltaTime);
+				x = objetivo.transform.localEulerAngles.y;
                 break;
 
         }
