@@ -15,22 +15,31 @@ public class TP_Controller : MonoBehaviour {
 	public int groundType;
     public CharacterController controlador;
 	public GameObject footprint;
+	public GameObject[] footprintpool;
+	public int defaultPoolAmount = 6;
 	public float ratefootprint = 1.0f;
+	private int Poolindex = 0;
 	private float nextfootprint = 0.0f;
-
     private Skills lastMode;
 
     void Awake()
     {
-        Instance = this;
-        //Application.targetFrameRate = 60;
-    }
+		Instance = this;
+		//Application.targetFrameRate = 60;
+		//creamos el pool de objetos.
 
-	// Use this for initialization
+		footprintpool = new GameObject[defaultPoolAmount];
+
+		for (int i=0; i<defaultPoolAmount; ++i) {
+			footprintpool [i] = Instantiate (footprint, transform.position, transform.rotation) as GameObject;
+		}
+	}	
+		// Use this for initialization
 	void Start()
     {
 	    lAnalogDirection.y = rAnalogDirection.y = 0f;
         controlador = GetComponent<CharacterController>();
+
 	}
 	
 	// Update is called once per frame
@@ -140,7 +149,12 @@ public class TP_Controller : MonoBehaviour {
 		{
 			nextfootprint = Time.time + ratefootprint-Random.Range(0.05f,0.1f);
 			if (groundType == 1) {
-				GameObject newFootPrint = Instantiate (footprint,  transform.position, transform.rotation) as GameObject;
+				footprintpool[Poolindex].SetActiveRecursively(false);
+				footprintpool[Poolindex].transform.position=transform.position;
+				footprintpool[Poolindex].transform.rotation= transform.rotation;
+				footprintpool[Poolindex].SetActiveRecursively(true);
+				++Poolindex;
+				if (Poolindex >= defaultPoolAmount) Poolindex=0;
 			}
 		}
 	}
