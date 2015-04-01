@@ -14,12 +14,12 @@ public class TP_Controller : MonoBehaviour {
     public float deadZone;
 	public int groundType;
     public CharacterController controlador;
-	public GameObject footprint;
-	public GameObject[] footprintpool;
-	public int defaultPoolAmount = 6;
-	public float ratefootprint = 1.0f;
-	private int Poolindex = 0;
-	private float nextfootprint = 0.0f;
+	//public GameObject footprint;
+	//public GameObject[] footprintpool;
+	//public int defaultPoolAmount = 6;
+	//public float ratefootprint = 1.0f;
+	//private int Poolindex = 0;
+	//private float nextfootprint = 0.0f;
     private CameraTypes lastMode;
 
     void Awake()
@@ -28,11 +28,11 @@ public class TP_Controller : MonoBehaviour {
 		//Application.targetFrameRate = 60;
 		//creamos el pool de objetos.
 
-		footprintpool = new GameObject[defaultPoolAmount];
+	/*	footprintpool = new GameObject[defaultPoolAmount];
 
 		for (int i=0; i<defaultPoolAmount; ++i) {
 			footprintpool [i] = Instantiate (footprint, transform.position, transform.rotation) as GameObject;
-		}
+		}*/
 	}	
 		// Use this for initialization
 	void Start()
@@ -71,7 +71,7 @@ public class TP_Controller : MonoBehaviour {
 
         TP_Motor.Instance.moveVector = lAnalogDirection;
 
-		if (((lAnalogDirection.z != 0) || (lAnalogDirection.x != 0)) && ( !TP_Status.Instance.IsJumping())) {DrawFootPrints();}
+		//if (((lAnalogDirection.z != 0) || (lAnalogDirection.x != 0)) && ( !TP_Status.Instance.IsJumping())) {DrawFootPrints();}
 
     }
 
@@ -133,7 +133,7 @@ public class TP_Controller : MonoBehaviour {
         TP_Motor.Instance.Jump();
     }
 
-	void OnControllerColliderHit (ControllerColliderHit hit){
+/*	void OnControllerColliderHit (ControllerColliderHit hit){
 		//Debug.Log(hit.gameObject.tag);
 		if (hit.gameObject.tag == "ground"){
 			groundType = 1;
@@ -157,7 +157,7 @@ public class TP_Controller : MonoBehaviour {
 				if (Poolindex >= defaultPoolAmount) Poolindex=0;
 			}
 		}
-	}
+	}*/
 
 
 }

@@ -17,6 +17,7 @@ public class TP_Status : MonoBehaviour {
     private bool _isJumping;
     private bool _isRejumping;
     private bool _isTargetting;
+	private int _ground;
 
     void Awake()
     {
@@ -89,6 +90,13 @@ public class TP_Status : MonoBehaviour {
         _isTargetting = value;
     }
 
+	public void SetGround(int ground){
+		_ground=ground;
+	}
+
+	public int GetGround(){
+		return _ground;
+	}
 	// Update is called once per frame
 	void Update () {
 		if(_isSinking)
