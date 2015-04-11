@@ -61,8 +61,8 @@ public class DronController : MonoBehaviour {
                 break;
             case DronStates.Talking:
                 transform.position = Vector3.Lerp(transform.position, talkingPos.position, movDamping * Time.deltaTime);
-		        transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(TP_Controller.Instance.transform.position - transform.position), rotDamping * Time.deltaTime);
-                //transform.LookAt(TP_Controller.Instance.transform);
+		        //transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(TP_Controller.Instance.transform.position - transform.position), rotDamping * Time.deltaTime);
+                transform.LookAt(Camera.main.transform);
                 break;
         }
         
