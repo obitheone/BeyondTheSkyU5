@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public enum TriggerType {Camera = 1, HUD, Player, Particle, MultiOptions}
-public enum OptionType { DisableMovement = 1, FixedCamera, ChangeCameraType, Camera2D, ShowHUDMessage }
+public enum OptionType { DisableMovement = 1, FixCamera, ChangeCameraType, Camera2D, ShowHUDMessage, KillPlayer}
 
 public class TriggerControl : MonoBehaviour {
 
@@ -72,7 +72,7 @@ public class TriggerControl : MonoBehaviour {
             {
                 switch (opciones[i].option)
                 {
-                    case OptionType.FixedCamera:
+                    case OptionType.FixCamera:
                         if (opciones[i].cameraPos != null)
                         {
                             //si la opcion tiene que ser reversible, guardamos el estado actual
@@ -133,6 +133,10 @@ public class TriggerControl : MonoBehaviour {
                         }
                         TP_Camera.Instance.ActiveCamera2D(opciones[i].Side2D);
                         break;
+                    case OptionType.KillPlayer:
+                        Debug.Log("Soy: " + col.tag);
+                        TP_Status.Instance.SubsVida(100);
+                        break;
                 }
             }
         }
@@ -147,7 +151,7 @@ public class TriggerControl : MonoBehaviour {
             {
                 switch (opcionesReversibles[i].option)
                 {
-                    case OptionType.FixedCamera:
+                    case OptionType.FixCamera:
                         TP_Camera.Instance.transform.position = opcionesReversibles[i].cameraPos.gameObject.transform.position;
                         TP_Camera.Instance.transform.rotation = opcionesReversibles[i].cameraPos.transform.rotation;
                         TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;

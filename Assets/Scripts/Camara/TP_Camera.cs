@@ -45,6 +45,7 @@ public class TP_Camera : MonoBehaviour
     void Start()
     {
         x = transform.eulerAngles.x;
+        Debug.Log("Start() X value: " + x);
         godMode = false;
         cameraPosChanged = false;
         isResetingCamera = false;
