@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum CameraTypes { Follow = 1, Camera2D, Orbit, Dios, Puntos, Cinema, Targetting }
+public enum CameraTypes { Follow = 1, Camera2D, Orbit, Dios, Puntos, Cinema, Targetting, MessageReading }
 
 public class TP_Camera : MonoBehaviour
 {
@@ -11,6 +11,8 @@ public class TP_Camera : MonoBehaviour
     private Transform currentPoint;
 
     public Transform targettingPoint;
+    public Transform msgReadingPoint;
+    public float msgReadingSmooth;
     public float targettingSmooth;
     public float rotateSmooth;
     private bool isResetingCamera;
@@ -45,7 +47,6 @@ public class TP_Camera : MonoBehaviour
     void Start()
     {
         x = objetivo.transform.localEulerAngles.y;
-        Debug.Log("Start() X value: " + x);
         godMode = false;
         cameraPosChanged = false;
         isResetingCamera = false;
@@ -197,6 +198,11 @@ public class TP_Camera : MonoBehaviour
                 transform.position = Vector3.Slerp(transform.position, targettingPoint.position, targettingSmooth * Time.deltaTime);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targettingPoint.rotation, rotateSmooth * Time.deltaTime);
 				x = objetivo.transform.localEulerAngles.y;
+                break;
+            case CameraTypes.MessageReading:
+                transform.position = Vector3.Slerp(transform.position, msgReadingPoint.position, msgReadingSmooth * Time.deltaTime);
+                transform.rotation = Quaternion.Slerp(transform.rotation, msgReadingPoint.rotation, rotateSmooth * Time.deltaTime);
+                x = objetivo.transform.localEulerAngles.y;
                 break;
 
         }

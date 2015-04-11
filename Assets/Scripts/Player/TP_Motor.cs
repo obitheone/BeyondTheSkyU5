@@ -67,7 +67,6 @@ public class TP_Motor : MonoBehaviour {
         if (TP_Controller.Instance.controlador.isGrounded)
         {
             TP_Status.Instance.SetJumping(false);
-//            Debug.Log("Salto en UpdateMovement(): " + TP_Status.Instance.IsJumping());
             TP_Status.Instance.SetReJumping(false);
             targetDir.y = 0;
         }
@@ -76,11 +75,16 @@ public class TP_Motor : MonoBehaviour {
 
     void FacePlayerToMovementDir()
     {
-        if (moveVector != Vector3.zero)
+        if (moveVector.sqrMagnitude > 0f && TP_Status.Instance.IsControllable()) //moveVector != Vector3.zero)
         {
             targetDir.y = 0f;
             Quaternion faceDir = Quaternion.LookRotation(targetDir);
 			TP_Controller.Instance.transform.rotation = Quaternion.Slerp(TP_Controller.Instance.transform.rotation, faceDir, dampSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Quaternion faceDir = Quaternion.LookRotation(TP_Controller.Instance.transform.forward);
+            TP_Controller.Instance.transform.rotation = Quaternion.Slerp(TP_Controller.Instance.transform.rotation, faceDir, dampSpeed * Time.deltaTime);
         }
     }
 

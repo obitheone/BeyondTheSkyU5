@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 //public enum TriggerType {Camera = 1, HUD, Player, Particle, MultiOptions}
-public enum OptionType { DisableMovement = 1, FixCamera, ChangeCameraType, Camera2D, ShowHUDMessage, KillPlayer}
+public enum OptionType { DisableMovement = 1, FixCamera, ChangeCameraType, Camera2D, DronMessage, KillPlayer}
 
 public class TriggerControl : MonoBehaviour {
 
@@ -17,10 +17,10 @@ public class TriggerControl : MonoBehaviour {
         public GameObject playerPos;
         public GameObject cameraPos;
         public GameObject lookAtObject;
-        public Vector3 messagePos;
+        public GameObject messagePos;
         public CameraTypes CameraType;
         public int Side2D;
-        public GameObject message;
+        public int messageID;
         public bool reversibleChange;
 
         public Option() { }
@@ -55,10 +55,10 @@ public class TriggerControl : MonoBehaviour {
             opcionesReversibles[i].playerPos = new GameObject();
             opcionesReversibles[i].cameraPos = new GameObject();
             opcionesReversibles[i].lookAtObject = new GameObject();
-            opcionesReversibles[i].messagePos = Vector3.zero;
+            opcionesReversibles[i].messagePos = new GameObject();
             opcionesReversibles[i].CameraType = 0;
             opcionesReversibles[i].Side2D = 0;
-            opcionesReversibles[i].message = new GameObject();
+            opcionesReversibles[i].messageID = 0;
             opcionesReversibles[i].reversibleChange = false;
         }
     }
@@ -142,10 +142,13 @@ public class TriggerControl : MonoBehaviour {
                             UnityEditor.EditorApplication.isPlaying = false;
                         }
                         break;
-                    case OptionType.ShowHUDMessage:
-                        if (opciones[i].message != null)
+                    case OptionType.DronMessage:
+                        if (opciones[i].messageID > 0)
                         {
-                            Instantiate(opciones[i].message, opciones[i].messagePos, Quaternion.identity);
+                            DronController.Instance.ActivateState(DronStates.Talking);
+                            TP_Camera.Instance.modoCamara = CameraTypes.MessageReading;
+                            TP_Status.Instance.SetControllable(false);
+                            DronController.Instance.ShowMessage(opciones[i].messageID);
                         }
                         else
                         {
