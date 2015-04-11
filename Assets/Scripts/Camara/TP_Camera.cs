@@ -44,7 +44,7 @@ public class TP_Camera : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        x = transform.eulerAngles.x;
+        x = objetivo.transform.localEulerAngles.y;
         Debug.Log("Start() X value: " + x);
         godMode = false;
         cameraPosChanged = false;

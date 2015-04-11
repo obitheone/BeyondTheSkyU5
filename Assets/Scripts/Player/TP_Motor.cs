@@ -52,6 +52,8 @@ public class TP_Motor : MonoBehaviour {
         //aplicar velocidad de movimiento
         targetDir *= moveSpeed;
 
+        if (!TP_Status.Instance.IsControllable()) targetDir = Vector3.zero;
+
         //aplicar gravedad si no está en el suelo
         //if (!TP_Controller.Instance.controlador.isGrounded) verticalMovement -= gravity * Time.deltaTime;
         ApplyGravity();
@@ -100,6 +102,7 @@ public class TP_Motor : MonoBehaviour {
             verticalMovement = reJumpSpeed;
             TP_Status.Instance.SetReJumping(true);
         }
+        else verticalMovement = 0f;
     }
 
     void ApplyGravity()

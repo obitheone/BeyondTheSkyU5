@@ -58,9 +58,7 @@
      <Compile Include="Assets\Scripts\Debug\HUDFPS.cs" />
      <Compile Include="Assets\Scripts\Debug\Status_dbg.cs" />
      <Compile Include="Assets\Scripts\Debug\newdbg.cs" />
-     <Compile Include="Assets\Scripts\Dron\DN_Follow.cs" />
-     <Compile Include="Assets\Scripts\Dron\DN_Life.cs" />
-     <Compile Include="Assets\Scripts\Dron\DN_LookAt.cs" />
+     <Compile Include="Assets\Scripts\Dron\DronController.cs" />
      <Compile Include="Assets\Scripts\Dron\UI_DronLife_DamageAnim.cs" />
      <Compile Include="Assets\Scripts\Dron\UI_LifeController.cs" />
      <Compile Include="Assets\Scripts\Enemys\AgentScriptFlytaka.cs" />

@@ -45,12 +45,15 @@ public class TP_Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        InputMovimiento(); //input y actualización del movimiento
-        InputHabilidades();
         InputCamara();
 
-        //actualizamos el movimiento del player
-        if (!TP_Camera.Instance.godMode) TP_Motor.Instance.MovePlayer();
+        if (TP_Status.Instance.IsControllable())
+        {
+            InputMovimiento(); //input y actualización del movimiento
+            InputHabilidades();
+        }
+
+        if (!TP_Camera.Instance.godMode) TP_Motor.Instance.MovePlayer();//actualizamos el movimiento del player
 	}
 
     //Get input from controller

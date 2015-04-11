@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public enum TriggerType {Camera = 1, HUD, Player, Particle, MultiOptions}
+//public enum TriggerType {Camera = 1, HUD, Player, Particle, MultiOptions}
 public enum OptionType { DisableMovement = 1, FixCamera, ChangeCameraType, Camera2D, ShowHUDMessage, KillPlayer}
 
 public class TriggerControl : MonoBehaviour {
 
-    public TriggerType type;
+    //public TriggerType type;
 
     [System.Serializable]
     public class Option
@@ -43,7 +43,6 @@ public class TriggerControl : MonoBehaviour {
     public Option[] opciones;
     private Option[] opcionesReversibles;
     private bool insideTrigger = false;
-    private bool madeLookAt = false;
 
     void Start()
     {
@@ -61,6 +60,36 @@ public class TriggerControl : MonoBehaviour {
             opcionesReversibles[i].Side2D = 0;
             opcionesReversibles[i].message = new GameObject();
             opcionesReversibles[i].reversibleChange = false;
+        }
+    }
+
+    void Update()
+    {
+    }
+
+    void RevertChanges() //revierte los cambios realizados al entrar en un trigger
+    {
+        for (int i = 0; i < opciones.Length; ++i)
+        {
+            if (opcionesReversibles[i].reversibleChange)
+            {
+                switch (opcionesReversibles[i].option)
+                {
+                    case OptionType.FixCamera:
+                        //TP_Camera.Instance.transform.position = opcionesReversibles[i].cameraPos.gameObject.transform.position;
+                        //TP_Camera.Instance.transform.rotation = opcionesReversibles[i].cameraPos.transform.rotation;
+                        TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;
+                        TP_Camera.Instance.LookAtObject(this.transform, false);
+                        break;
+
+                    case OptionType.ChangeCameraType:
+                        TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;
+                        break;
+                    case OptionType.Camera2D:
+                        TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;
+                        break;
+                }
+            }
         }
     }
 
@@ -137,6 +166,9 @@ public class TriggerControl : MonoBehaviour {
                         Debug.Log("Soy: " + col.tag);
                         TP_Status.Instance.SubsVida(100);
                         break;
+                    case OptionType.DisableMovement:
+                        TP_Status.Instance.SetControllable(false);
+                        break;
                 }
             }
         }
@@ -145,29 +177,10 @@ public class TriggerControl : MonoBehaviour {
     void OnTriggerExit() //SI HAY OPCIONES REVERSIBLES AL SALIR DEL TRIGGER, LAS REVIERTO
     {
         insideTrigger = false;
-        for (int i = 0; i < opciones.Length; ++i)
-        {
-            if (opcionesReversibles[i].reversibleChange)
-            {
-                switch (opcionesReversibles[i].option)
-                {
-                    case OptionType.FixCamera:
-                        TP_Camera.Instance.transform.position = opcionesReversibles[i].cameraPos.gameObject.transform.position;
-                        TP_Camera.Instance.transform.rotation = opcionesReversibles[i].cameraPos.transform.rotation;
-                        TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;
-                        TP_Camera.Instance.LookAtObject(this.transform, false);
-                        break;
-
-                    case OptionType.ChangeCameraType:
-                        TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;
-                        break;
-                    case OptionType.Camera2D:
-                        TP_Camera.Instance.modoCamara = opcionesReversibles[i].CameraType;
-                        break;
-                }
-            }
-        }
+        RevertChanges();
     }
+
+
 
 	//Cambio del Icono segun el tipo de trigger.
 	void OnDrawGizmos(){

@@ -17,19 +17,19 @@ public class TP_Status : MonoBehaviour {
     private bool _isJumping;
     private bool _isRejumping;
     private bool _isTargetting;
+    public bool _isControllable;
 	private int _ground;
 
     void Awake()
     {
         Instance = this;
-        _isJumping = _isRejumping = false;
     }
 
 	// Use this for initialization
 	void Start () {
         _vida = 100;
-        _isDead = false;
-		_isSinking = false;
+        _isDead = _isSinking = _isJumping = _isRejumping = false;
+        _isControllable = true;
 	}
 
     public int GetVida(){ return _vida; }
@@ -104,6 +104,16 @@ public class TP_Status : MonoBehaviour {
 			TP_Skills.Instance.player.transform.Translate (-Vector3.up * 0.25f * Time.deltaTime);
 		}
 	}
+
+    public bool IsControllable()
+    {
+        return _isControllable;
+    }
+
+    public void SetControllable(bool value)
+    {
+        _isControllable = value;
+    }
 	
 	IEnumerator CargarEscena( float t ) {
 		yield return new WaitForSeconds( t );
