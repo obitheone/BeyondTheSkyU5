@@ -51,7 +51,8 @@ public class TP_Controller : MonoBehaviour {
         {
             InputMovimiento(); //input y actualización del movimiento
             InputHabilidades();
-        }
+        }else
+            InputInterface();
 
         if (!TP_Camera.Instance.godMode) TP_Motor.Instance.MovePlayer();//actualizamos el movimiento del player
 	}
@@ -76,6 +77,18 @@ public class TP_Controller : MonoBehaviour {
 
 		//if (((lAnalogDirection.z != 0) || (lAnalogDirection.x != 0)) && ( !TP_Status.Instance.IsJumping())) {DrawFootPrints();}
 
+    }
+
+    void InputInterface()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))//boton para quitar el mensaje
+        {
+            //desactivar modo mensaje
+            TP_Camera.Instance.modoCamara = CameraTypes.Follow;
+            DronController.Instance.ActivateState(DronStates.Follow);
+            DronController.Instance.message.SetActive(false);
+            TP_Status.Instance.SetControllable(true);
+        }
     }
 
     void InputHabilidades()

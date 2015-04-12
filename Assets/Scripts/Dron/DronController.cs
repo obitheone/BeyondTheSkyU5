@@ -48,6 +48,7 @@ public class DronController : MonoBehaviour {
 		//agent.SetDestination(target.position);
         _state = DronStates.Follow;
         _showingMessage = false;
+        message.SetActive(false);
 	}
 
 	
@@ -56,6 +57,7 @@ public class DronController : MonoBehaviour {
         switch (_state)
         {
             case DronStates.Follow:
+                if (_showingMessage) _showingMessage = false;
                 transform.position = Vector3.Lerp(transform.position, followPos.position, movDamping * Time.deltaTime);
 		        transform.rotation = Quaternion.Slerp (transform.rotation, followPos.transform.rotation, rotDamping * Time.deltaTime);
                 break;
@@ -90,7 +92,8 @@ public class DronController : MonoBehaviour {
         if (test.magnitude < 0.1f && _state == DronStates.Talking && !_showingMessage && _messageID > 0)
         {
             _showingMessage = true;
-            Instantiate(message, messagePos.position, Quaternion.identity);
+            //Instantiate(message, messagePos.position, Quaternion.identity);
+            message.SetActive(true);
             _messageID = 0;
         }
         Debug.Log(test.magnitude);
