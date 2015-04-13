@@ -69,7 +69,11 @@
      <Compile Include="Assets\Scripts\Enemys\ProximityDetectorOrutaka.cs" />
      <Compile Include="Assets\Scripts\Enemys\Status_Controller_Flytaka.cs" />
      <Compile Include="Assets\Scripts\Enemys\Status_Controller_Orutaka.cs" />
+     <Compile Include="Assets\Scripts\Level\Destroyer.cs" />
      <Compile Include="Assets\Scripts\Level\Mandrake\Jumping_Mandrake.cs" />
+     <Compile Include="Assets\Scripts\Level\Trileros.cs" />
+     <Compile Include="Assets\Scripts\Level\WavesGen.cs" />
+     <Compile Include="Assets\Scripts\Level\trilerosmandragora.cs" />
      <Compile Include="Assets\Scripts\Menus\Change_color_tittle.cs" />
      <Compile Include="Assets\Scripts\Menus\Credits.cs" />
      <Compile Include="Assets\Scripts\Menus\FinNivel.cs" />
@@ -112,11 +116,16 @@
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+     <None Include="Assets\Shaders\noiseSimplex.cginc" />
      <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
      <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
+     <None Include="Assets\Shaders\ZeldaWaterV2.shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/snavarro/Documents/GitHub/BeyondTheSkyU5/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

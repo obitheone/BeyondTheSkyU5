@@ -96,7 +96,7 @@ public class DronController : MonoBehaviour {
             message.SetActive(true);
             _messageID = 0;
         }
-        Debug.Log(test.magnitude);
+       /// Debug.Log(test.magnitude);
 	}
 	
 }
