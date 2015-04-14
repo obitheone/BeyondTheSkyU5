@@ -46,9 +46,27 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\KY_effects\Script\ConGUI.js" />
-     <Compile Include="Assets\KY_effects\Script\Lighting.js" />
-     <None Include="Assets\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
+     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
+     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
+     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" />
+     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
+     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
+     <Compile Include="Assets\MagicalFx2\script\RotatingZone.js" />
+     <Compile Include="Assets\MagicalFx2\script\Script_missile.js" />
+     <Compile Include="Assets\MagicalFx2\script\script_missile_Launcher.js" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+     <None Include="Assets\Shaders\noiseSimplex.cginc" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
+     <None Include="Assets\Shaders\ZeldaWaterV2.shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/snavarro/Documents/GitHub/BeyondTheSkyU5/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
