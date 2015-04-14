@@ -30,6 +30,13 @@ public class TP_Skills : MonoBehaviour {
 	public GameObject blackhole;
 	public GameObject forcepush;
 
+	public GameObject sphericfx;
+	public GameObject sphericringfx;
+	public GameObject electrical;
+	public GameObject electrical1;
+	public GameObject electrical2;
+	public GameObject electrical3;
+
     private SkillTypes enabledSkill = SkillTypes.noSkill; 
 
 	private SK_TractorBeam _currentObjectBeamScript;
@@ -168,6 +175,24 @@ public class TP_Skills : MonoBehaviour {
 		_beam=false;
 		_lateral=0;
 		_horizontal=0;
+
+		//activamos la burbuja
+		sphericfx.GetComponent<ParticleEmitter>().emit = false;
+		sphericringfx.GetComponent<ParticleEmitter>().emit = false;
+		sphericfx.GetComponent<ParticleRenderer> ().enabled=false;
+		sphericringfx.GetComponent<ParticleRenderer>().enabled=false;
+		electrical.GetComponent<ParticleSystem> ().enableEmission = false;
+		electrical1.GetComponent<ParticleSystem> ().enableEmission = false;
+		electrical2.GetComponent<ParticleSystem> ().enableEmission = false;
+		electrical3.GetComponent<ParticleSystem> ().enableEmission = false;
+
+
+		//lo atachamos al player
+		sphericfx.transform.parent=righthand.transform;
+		sphericfx.transform.localPosition=Vector3.zero;
+		sphericfx.transform.localRotation=Quaternion.identity;
+
+
 		enabledSkill = SkillTypes.noSkill;
 	}
 
@@ -194,6 +219,21 @@ public class TP_Skills : MonoBehaviour {
 					_currentObjectBeamScript.player=player;
 					_currentLightningBoltScriptR.target=hit.collider.gameObject.transform.position;
 					_beam=true;
+
+					//activamos la burbuja
+					sphericfx.GetComponent<ParticleEmitter>().emit = true;
+					sphericringfx.GetComponent<ParticleEmitter>().emit = true;
+					sphericfx.GetComponent<ParticleRenderer> ().enabled=true;
+					sphericringfx.GetComponent<ParticleRenderer>().enabled=true;
+					electrical.GetComponent<ParticleSystem> ().enableEmission = true;
+					electrical1.GetComponent<ParticleSystem> ().enableEmission = true;
+					electrical2.GetComponent<ParticleSystem> ().enableEmission = true;
+					electrical3.GetComponent<ParticleSystem> ().enableEmission = true;
+
+					//lo atachamos al objeto
+					sphericfx.transform.parent=_beamobject.transform;
+					sphericfx.transform.localPosition=Vector3.zero;
+					sphericfx.transform.localRotation=Quaternion.identity;
 
 		}
 		enabledSkill = SkillTypes.noSkill;

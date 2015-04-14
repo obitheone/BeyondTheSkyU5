@@ -46,14 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
-     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
-     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" />
-     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
-     <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
-     <Compile Include="Assets\MagicalFx2\script\RotatingZone.js" />
-     <Compile Include="Assets\MagicalFx2\script\Script_missile.js" />
-     <Compile Include="Assets\MagicalFx2\script\script_missile_Launcher.js" />
+     <Compile Include="Assets\ThirdPartyEffects\DynamicElements_Effects\scripts\destroyThisTimed.js" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\ThirdPartyEffects\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
