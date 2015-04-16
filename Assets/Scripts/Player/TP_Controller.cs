@@ -73,6 +73,16 @@ public class TP_Controller : MonoBehaviour {
         else
             lAnalogDirection.z = 0f;
 
+        //Update Status
+        if (lAnalogDirection == Vector3.zero) TP_Status.Instance.SetMoving(false,0f);
+        else
+        {
+            lAnalogDirection = lAnalogDirection.normalized;
+            
+            TP_Status.Instance.SetMoving(true, lAnalogDirection.sqrMagnitude);
+            //Debug.Log("SQR: " + lAnalogDirection.sqrMagnitude);
+        }
+
         TP_Motor.Instance.moveVector = lAnalogDirection;
 
 		//if (((lAnalogDirection.z != 0) || (lAnalogDirection.x != 0)) && ( !TP_Status.Instance.IsJumping())) {DrawFootPrints();}
