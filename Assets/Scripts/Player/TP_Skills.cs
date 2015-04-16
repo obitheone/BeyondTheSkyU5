@@ -30,6 +30,13 @@ public class TP_Skills : MonoBehaviour {
 	public GameObject blackhole;
 	public GameObject forcepush;
 
+	public GameObject sphericfx;
+	public GameObject sphericringfx;
+	public GameObject electrical;
+	public GameObject electrical1;
+	public GameObject electrical2;
+	public GameObject electrical3;
+
     private SkillTypes enabledSkill = SkillTypes.noSkill; 
 
 	private SK_TractorBeam _currentObjectBeamScript;
@@ -131,9 +138,11 @@ public class TP_Skills : MonoBehaviour {
 			break;
 		case SkillTypes.push:
 			_push=true;
+			_pushcharge=false;
 			break;
 		case SkillTypes.pushcharge:
 			_pushcharge=true;
+			_push=false;
 			break;
 		case SkillTypes.blackHole:
 			if (Input.GetMouseButtonDown (0)) {activateblackhole();}
@@ -144,21 +153,28 @@ public class TP_Skills : MonoBehaviour {
 
 	void OnGUI()
 	{
+		string temp;
 		if (_beam)
         {			
-			string temp=_currentObjectBeamScript.energy.ToString();
+			temp=_currentObjectBeamScript.energy.ToString();
 			GUI.Label (new Rect (10, 10, 150, 20), "Push Force: "+temp);
 		}
-		if (_pushcharge)
-		{			
-			string temp=_energypush.ToString();
+		//if (_pushcharge)
+		//{			
+			temp=_energypush.ToString();
 			GUI.Label (new Rect (10, 10, 150, 20), "Push Force: "+temp);
-		}
+		//}
 	}
 
     public void ActivateSkill(SkillTypes skill)
     {
-        enabledSkill = skill;
+
+
+		//if (enabledSkill == SkillTypes.noSkill) enabledSkill = skill;
+
+		//else if ((enabledSkill==SkillTypes.pushcharge)&&(skill==SkillTypes.push)) enabledSkill = skill;
+		enabledSkill = skill;
+		//Debug.Log ("actuvada Skill:"+enabledSkill);
     }
 
 	private void deactivatetractorbeam()
@@ -168,6 +184,24 @@ public class TP_Skills : MonoBehaviour {
 		_beam=false;
 		_lateral=0;
 		_horizontal=0;
+
+		//activamos la burbuja
+		sphericfx.GetComponent<ParticleEmitter>().emit = false;
+		sphericringfx.GetComponent<ParticleEmitter>().emit = false;
+		sphericfx.GetComponent<ParticleRenderer> ().enabled=false;
+		sphericringfx.GetComponent<ParticleRenderer>().enabled=false;
+		electrical.GetComponent<ParticleSystem> ().enableEmission = false;
+		electrical1.GetComponent<ParticleSystem> ().enableEmission = false;
+		electrical2.GetComponent<ParticleSystem> ().enableEmission = false;
+		electrical3.GetComponent<ParticleSystem> ().enableEmission = false;
+
+
+		//lo atachamos al player
+		sphericfx.transform.parent=righthand.transform;
+		sphericfx.transform.localPosition=Vector3.zero;
+		sphericfx.transform.localRotation=Quaternion.identity;
+
+
 		enabledSkill = SkillTypes.noSkill;
 	}
 
@@ -194,6 +228,21 @@ public class TP_Skills : MonoBehaviour {
 					_currentObjectBeamScript.player=player;
 					_currentLightningBoltScriptR.target=hit.collider.gameObject.transform.position;
 					_beam=true;
+
+					//activamos la burbuja
+					sphericfx.GetComponent<ParticleEmitter>().emit = true;
+					sphericringfx.GetComponent<ParticleEmitter>().emit = true;
+					sphericfx.GetComponent<ParticleRenderer> ().enabled=true;
+					sphericringfx.GetComponent<ParticleRenderer>().enabled=true;
+					electrical.GetComponent<ParticleSystem> ().enableEmission = true;
+					electrical1.GetComponent<ParticleSystem> ().enableEmission = true;
+					electrical2.GetComponent<ParticleSystem> ().enableEmission = true;
+					electrical3.GetComponent<ParticleSystem> ().enableEmission = true;
+
+					//lo atachamos al objeto
+					sphericfx.transform.parent=_beamobject.transform;
+					sphericfx.transform.localPosition=Vector3.zero;
+					sphericfx.transform.localRotation=Quaternion.identity;
 
 		}
 		enabledSkill = SkillTypes.noSkill;
@@ -265,36 +314,35 @@ public class TP_Skills : MonoBehaviour {
 		lefthandpushconcentration.emit = true;
 		lefthandpushconcentration.enabled = true;
 		lefthandpushconcentration.minEnergy = (_energypush - 50) / 10;
-		enabledSkill = SkillTypes.noSkill;
+
+		//enabledSkill = SkillTypes.noSkill;
+		//_pushcharge = false;
 	}
 	private void push()
 	{
-		/*GameObject newProjectile = Instantiate( forcepush, righthand.transform.position, righthand.transform.rotation ) as GameObject;
-		newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection(player.transform.forward*15);
-		FX_Blackhole script= newProjectile.GetComponent("FX_Blackhole") as FX_Blackhole;
+		if (_energypush > 300.0f) {
+			GameObject newProjectile = Instantiate (forcepush, righthand.transform.position, righthand.transform.rotation) as GameObject;
+			//newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection(player.transform.forward*15);
+			newProjectile.GetComponent<SK_Push> ().direction = -player.transform.forward;
+		} else {
 
-		script.power = _energypush / 5;
-		script.radius = _energypush / 10;
-		script.time = 1;
-		*/
+			Vector3 explosionPos = new Vector3 (righthand.transform.position.x, righthand.transform.position.y, righthand.transform.position.z);
 
-		Vector3 explosionPos = new Vector3(righthand.transform.position.x,righthand.transform.position.y,righthand.transform.position.z);
-
-		Collider[] colliders = Physics.OverlapSphere (explosionPos, _energypush);
-		foreach (Collider hit in colliders) {
-			if ((hit) && (hit.GetComponent<Rigidbody>())) {
+			Collider[] colliders = Physics.OverlapSphere (explosionPos, _energypush);
+			foreach (Collider hit in colliders) {
+				if ((hit) && (hit.GetComponent<Rigidbody> ())) {
 
 
-				Vector3 directionToTarget = player.transform.position - hit.gameObject.transform.position;
-				float angle = Vector3.Angle(player.transform.forward, directionToTarget);
-				float distance = directionToTarget.magnitude;
+					Vector3 directionToTarget = player.transform.position - hit.gameObject.transform.position;
+					float angle = Vector3.Angle (player.transform.forward, directionToTarget);
+					float distance = directionToTarget.magnitude;
 				
-				if ((Mathf.Abs(angle) > 130)&&  distance < 10)
-				{
-					//Debug.Log(Mathf.Abs(angle));
-					//hit.GetComponent<Rigidbody>().AddExplosionForce (_energypush, explosionPos, _energypush / 10, 3);
-					hit.GetComponent<Rigidbody>().AddForce(-1*(_energypush*(10-distance))*directionToTarget.normalized);
+					if ((Mathf.Abs (angle) > 130) && distance < 10) {
+						//Debug.Log(Mathf.Abs(angle));
+						//hit.GetComponent<Rigidbody>().AddExplosionForce (_energypush, explosionPos, _energypush / 10, 3);
+						hit.GetComponent<Rigidbody> ().AddForce (-1 * (_energypush * (10 - distance)) * directionToTarget.normalized);
 
+					}
 				}
 			}
 		}
@@ -307,8 +355,6 @@ public class TP_Skills : MonoBehaviour {
 		lefthandpushconcentration.ClearParticles ();
 		lefthandpushconcentration.emit = false;
 		lefthandpushconcentration.enabled = false;
-
-
 	}
 	private void activateblackhole()
 	{

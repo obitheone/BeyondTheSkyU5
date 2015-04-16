@@ -7,6 +7,7 @@ public class TP_Status : MonoBehaviour {
 
     //PUBLIC
     public static TP_Status Instance;
+    public Animator animController;
 
 
 
@@ -14,11 +15,13 @@ public class TP_Status : MonoBehaviour {
 	private bool _isSinking;
     private int _vida;
     private bool _isDead;
+    private bool _isMoving;
     private bool _isJumping;
     private bool _isRejumping;
     private bool _isTargetting;
-    public bool _isControllable;
+    private bool _isControllable;
 	private int _ground;
+    private float _movingBlend;
 
     void Awake()
     {
@@ -74,6 +77,11 @@ public class TP_Status : MonoBehaviour {
     public bool IsReJumping() { return _isRejumping; }
     public bool IsTargetting() { return _isTargetting; }
     public bool IsDead() { return _isDead; }
+    public bool IsMoving() { return _isMoving; }
+    public float MovingBlend()
+    {
+        return _movingBlend;
+    }
 
     public void SetJumping(bool value)
     {
@@ -97,12 +105,38 @@ public class TP_Status : MonoBehaviour {
 	public int GetGround(){
 		return _ground;
 	}
+
+    public void SetMoving(bool value, float blend)
+    {
+        _isMoving = value;
+        if(value)_movingBlend = blend;
+    }
+
 	// Update is called once per frame
 	void Update () {
 		if(_isSinking)
         {
 			TP_Skills.Instance.player.transform.Translate (-Vector3.up * 0.25f * Time.deltaTime);
 		}
+
+        if (_isMoving)
+        {
+            //inicio animacion
+            animController.SetBool("isMoving", true);
+            //estoy andando o corriendo
+            animController.SetFloat("MovingBlend", _movingBlend);
+        }
+        else animController.SetBool("isMoving", false);
+
+        if (_isJumping || _isRejumping)
+        {
+            animController.SetBool("isJumping", true);
+        }
+        else
+        {
+            animController.SetBool("isJumping", false);
+            animController.SetBool("isGrounded", true);
+        }
 	}
 
     public bool IsControllable()

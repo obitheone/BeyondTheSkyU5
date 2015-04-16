@@ -73,6 +73,16 @@ public class TP_Controller : MonoBehaviour {
         else
             lAnalogDirection.z = 0f;
 
+        //Update Status
+        if (lAnalogDirection == Vector3.zero) TP_Status.Instance.SetMoving(false,0f);
+        else
+        {
+            lAnalogDirection = lAnalogDirection.normalized;
+            
+            TP_Status.Instance.SetMoving(true, lAnalogDirection.sqrMagnitude);
+            //Debug.Log("SQR: " + lAnalogDirection.sqrMagnitude);
+        }
+
         TP_Motor.Instance.moveVector = lAnalogDirection;
 
 		//if (((lAnalogDirection.z != 0) || (lAnalogDirection.x != 0)) && ( !TP_Status.Instance.IsJumping())) {DrawFootPrints();}
@@ -93,15 +103,43 @@ public class TP_Controller : MonoBehaviour {
 
     void InputHabilidades()
     {
-        //Jumping Input
+		//Jumping Input
         if (Input.GetButtonDown("Jump")) Jump();
 
         //PROVISIONAL HASTA QUE DEFINAMOS LOS BOTONES
         if (Input.GetKeyDown(KeyCode.F)) TP_Skills.Instance.ActivateSkill(SkillTypes.tractionBeam);
-        if (Input.GetKeyDown(KeyCode.G)) TP_Skills.Instance.ActivateSkill(SkillTypes.liftingHook);
-        if (Input.GetKeyDown(KeyCode.B)) TP_Skills.Instance.ActivateSkill(SkillTypes.blackHole);
-		if (Input.GetKeyDown(KeyCode.V)) TP_Skills.Instance.ActivateSkill(SkillTypes.pushcharge);
-		if (Input.GetKeyUp (KeyCode.V)) {TP_Skills.Instance.ActivateSkill (SkillTypes.push);}
+        else if (Input.GetKeyDown(KeyCode.G)) TP_Skills.Instance.ActivateSkill(SkillTypes.liftingHook);
+        else if (Input.GetKeyDown(KeyCode.B)) TP_Skills.Instance.ActivateSkill(SkillTypes.blackHole);
+		else if (Input.GetKeyUp (KeyCode.V)) {TP_Skills.Instance.ActivateSkill (SkillTypes.push);}
+		else if (Input.GetKey (KeyCode.V)) {TP_Skills.Instance.ActivateSkill (SkillTypes.pushcharge);}
+
+
+		/*Event e = Event.current;
+		if (e.isKey && e.type == EventType.KeyDown) {
+			switch (e.keyCode) {
+			case KeyCode.F:
+				TP_Skills.Instance.ActivateSkill(SkillTypes.tractionBeam);
+				break;
+			case KeyCode.G:
+				TP_Skills.Instance.ActivateSkill(SkillTypes.liftingHook);
+				break;    
+			case KeyCode.B:
+				TP_Skills.Instance.ActivateSkill(SkillTypes.blackHole);
+				break;  
+			case KeyCode.V:
+				TP_Skills.Instance.ActivateSkill (SkillTypes.pushcharge);
+				break; 
+			default:
+				break;
+			}
+		} else 
+		if (e.isKey && e.type == EventType.keyUp) {
+			switch (e.keyCode) {
+				case KeyCode.V:
+					TP_Skills.Instance.ActivateSkill (SkillTypes.push);
+				break; 
+			}
+		}*/
 
         //Apuntar
         if (Input.GetKeyDown(KeyCode.Z))

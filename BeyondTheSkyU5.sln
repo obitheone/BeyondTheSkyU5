@@ -7,6 +7,8 @@ Project("{A9B54337-3D07-478F-D552-228DBE984C62}") = "BeyondTheSkyU5", "Assembly-
 EndProject
 Project("{A9B54337-3D07-478F-D552-228DBE984C62}") = "BeyondTheSkyU5", "Assembly-UnityScript-firstpass.unityproj", "{B19687A0-9CF2-777F-1C81-417D6A8B0A0C}"
 EndProject
+Project("{A9B54337-3D07-478F-D552-228DBE984C62}") = "BeyondTheSkyU5", "Assembly-UnityScript.unityproj", "{B4712440-5C1C-53A5-24B9-0E7764DC6652}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,11 +27,15 @@ Global
 		{B19687A0-9CF2-777F-1C81-417D6A8B0A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B19687A0-9CF2-777F-1C81-417D6A8B0A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B19687A0-9CF2-777F-1C81-417D6A8B0A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4712440-5C1C-53A5-24B9-0E7764DC6652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4712440-5C1C-53A5-24B9-0E7764DC6652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4712440-5C1C-53A5-24B9-0E7764DC6652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4712440-5C1C-53A5-24B9-0E7764DC6652}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																																																												GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																																														GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

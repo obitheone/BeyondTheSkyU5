@@ -9,7 +9,8 @@ public class TP_Motor : MonoBehaviour {
     public static TP_Motor Instance;
     public Vector3 moveVector;
     Vector3 targetDir;
-    public float moveSpeed;
+    public float walkSpeed;
+    public float runSpeed;
     public float jumpSpeed;
     public float reJumpSpeed;
     public float dampSpeed;
@@ -21,11 +22,13 @@ public class TP_Motor : MonoBehaviour {
 
     //PRIVATE
     private float verticalMovement;
+    private float moveSpeed;
 
     void Awake()
     {
         Instance = this;
         moveVector = targetDir = Vector3.zero;
+        moveSpeed = walkSpeed;
     }
 
 	// Use this for initialization
@@ -45,11 +48,14 @@ public class TP_Motor : MonoBehaviour {
         //calcular forward y right en funcion de coordenadas de camara
         Vector3 right = new Vector3(forward.z, 0f, -forward.x);
 
+        moveSpeed = walkSpeed * (1 - moveVector.sqrMagnitude) + runSpeed * moveVector.sqrMagnitude;
+
         //obtener movimiento del joystick y calcular dirección de movimiento
         targetDir = moveVector.x * right + moveVector.z * forward;
         //targetDir = targetDir.normalized;
 
         //aplicar velocidad de movimiento
+        Debug.Log(targetDir.sqrMagnitude);
         targetDir *= moveSpeed;
 
         if (!TP_Status.Instance.IsControllable()) targetDir = Vector3.zero;
@@ -98,13 +104,13 @@ public class TP_Motor : MonoBehaviour {
     {
         if (TP_Controller.Instance.controlador.isGrounded && !TP_Status.Instance.IsJumping())
         {
-            verticalMovement = jumpSpeed;
             TP_Status.Instance.SetJumping(true);
+            verticalMovement = jumpSpeed;
         }
         else if (!TP_Status.Instance.IsReJumping() && verticalMovement < reJumpDelay)
         {
-            verticalMovement = reJumpSpeed;
             TP_Status.Instance.SetReJumping(true);
+            verticalMovement = reJumpSpeed;
         }
         else verticalMovement = 0f;
     }
@@ -115,5 +121,12 @@ public class TP_Motor : MonoBehaviour {
             verticalMovement -= gravity * Time.deltaTime;
     }
 
-
+    public void SetSpeed(bool state)//cambio la velocidad si está corriendo o andando
+    {
+        if (state)//andando
+        {
+            moveSpeed = walkSpeed;
+        }
+        else moveSpeed = runSpeed;
+    }
 }
