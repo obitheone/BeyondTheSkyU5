@@ -100,10 +100,12 @@ public class AgentScriptFlytaka : MonoBehaviour {
 	void Range_attack()
 	{
 		//encarar hacia el player y disparar//
-		agent.enabled = false;
-		Vector3 relativePos = target.position - transform.position;
-		Quaternion rotation = Quaternion.LookRotation(relativePos);
-		transform.rotation = rotation;
+		//agent.enabled = false;
+		//Vector3 relativePos = target.position - transform.position;
+		//Quaternion rotation = Quaternion.LookRotation(relativePos);
+		//transform.rotation = rotation;
+		//transform.rotation = rotation;
+		//transform.rotation=new Vector3 (0,transform.rotation.y,0);
 
 		if (Time.time > nextFire)
 		{
@@ -114,11 +116,12 @@ public class AgentScriptFlytaka : MonoBehaviour {
 	}
 	void meele_attack()
 	{
-		agent.enabled = false;
+		//agent.enabled = false;
 		//encarar hacia el player y disparar//
-		Vector3 relativePos = target.position - transform.position;
-		Quaternion rotation = Quaternion.LookRotation(relativePos);
-		transform.rotation = rotation;
+		//Vector3 relativePos = target.position - transform.position;
+		//Quaternion rotation = Quaternion.LookRotation(relativePos);
+		//transform.rotation = rotation;
+		//transform.rotation = rotation;
 
 		if (Time.time > nextFire)
 		{

@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\TP_Skills.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemys\AgentScriptFlytaka.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\TP_Skills.cs" Line="172" Column="3" />
-      <File FileName="Assets\Scripts\Player\TP_Controller.cs" Line="104" Column="39" />
-      <File FileName="Assets\Scripts\PlayerSkills\SK_Push.cs" Line="10" Column="29" />
-      <File FileName="Assets\Scripts\Player\TP_Status.cs" Line="18" Column="31" />
+      <File FileName="Assets\Scripts\Player\TP_Status.cs" Line="129" Column="14" />
+      <File FileName="Assets\Scripts\Enemys\Status_Controller_Flytaka.cs" Line="33" Column="29" />
+      <File FileName="Assets\Scripts\Enemys\ProximityDetectorFlytaka.cs" Line="29" Column="15" />
+      <File FileName="Assets\Scripts\Enemys\AgentScriptFlytaka.cs" Line="121" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

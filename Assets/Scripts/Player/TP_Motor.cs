@@ -55,7 +55,7 @@ public class TP_Motor : MonoBehaviour {
         //targetDir = targetDir.normalized;
 
         //aplicar velocidad de movimiento
-        Debug.Log(targetDir.sqrMagnitude);
+       // Debug.Log(targetDir.sqrMagnitude);
         targetDir *= moveSpeed;
 
         if (!TP_Status.Instance.IsControllable()) targetDir = Vector3.zero;

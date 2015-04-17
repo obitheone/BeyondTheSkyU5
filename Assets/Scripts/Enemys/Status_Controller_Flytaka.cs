@@ -21,6 +21,7 @@ public class Status_Controller_Flytaka : MonoBehaviour {
 	public float player_distace=100f;  //distancia del jugador
 	public float chasingTime=0;	//tiempo que hace que lo estamos persiguiendo fuera de vision
 	public bool player_view=false;	//vemos al player?
+	public Animator animController;
 
 	//variables de salida
 	public int state;
@@ -48,8 +49,11 @@ public class Status_Controller_Flytaka : MonoBehaviour {
 	void Update () {
 				if (!ES.isDead) {
 						if (player_view) { //vemos al player
-								if (player_distace > range_distance)
+								if (player_distace > range_distance){
 										state = CHASE;
+										animController.SetBool("isMoving", true);
+										animController.SetBool("isAttacking", false);
+								}
 								else {
 										if (player_distace > range_meele) {
 												state = ATTACK;
@@ -58,18 +62,27 @@ public class Status_Controller_Flytaka : MonoBehaviour {
 												state = ATTACK;
 												attack_type = MEELE_ATTACK;
 										}
+										animController.SetBool("isAttacking", true);
+										animController.SetBool("isMoving", false);
 								}
 						} else { //no vemos al player
 								if (chasingTime <= chase_time) {
 										state = CHASE;
+										animController.SetBool("isMoving", true);
+										animController.SetBool("isAttacking", false);
 								} else {
 										state = PATROL;
+									animController.SetBool("isAttacking", false);
+										animController.SetBool("isMoving", false);
 								}
 						}
 				} 
 				else 
 				{
 					state=DEAD;
+					animController.SetBool("isDead", true);
+					animController.SetBool("isAttaking", false);
+					animController.SetBool("isMoving", false);
 				}
 		}
 }

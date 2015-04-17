@@ -90,7 +90,7 @@ ModelImporter:
     400080: joint1
     400082: joint2
     4300000: Flytaka_rig_and_skinning_v8_ACABAT:pasted__Flytaka
-    7400000: Take 001
+    7400000: Hit
     9500000: //RootNode
     13700000: Flytaka_rig_and_skinning_v8_ACABAT:pasted__Flytaka
   materials:
@@ -108,7 +108,229 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Hit
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:Cabeza
+          2
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          D
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          D/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 2
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          D/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 3
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          D/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 3/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 4
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          D/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 3/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 4/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 5
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          D/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 3/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 4/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 5/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 6
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          D/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 3/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 4/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 5/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 6/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 7
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          D/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 3/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 4/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 5/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 6/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          D 7/Flytaka_rig_and_skinning_v8_ACABAT:Oreja D 8
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          I
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          I/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 1
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          I/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 1/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 2
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          I/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 1/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 3
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          I/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 1/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 3/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 4
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          I/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 1/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 3/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 4/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 5
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          I/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 1/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 3/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 4/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 5/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 6
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:CABEZA/Flytaka_rig_and_skinning_v8_ACABAT:OREJA
+          I/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 1/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 2/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 3/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 4/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 5/Flytaka_rig_and_skinning_v8_ACABAT:Oreja
+          I 6/Flytaka_rig_and_skinning_v8_ACABAT:Oreja I 7
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/AlaDcha
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/AlaDcha/joint2
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/AlaIzq
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/AlaIzq/joint1
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          5
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          5/Flytaka_rig_and_skinning_v8_ACABAT:Columna 6
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          5/Flytaka_rig_and_skinning_v8_ACABAT:Columna 6/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          7
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          5/Flytaka_rig_and_skinning_v8_ACABAT:Columna 6/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          7/Flytaka_rig_and_skinning_v8_ACABAT:Columna 8
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          5/Flytaka_rig_and_skinning_v8_ACABAT:Columna 6/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          7/Flytaka_rig_and_skinning_v8_ACABAT:Columna 8/Flytaka_rig_and_skinning_v8_ACABAT:COLA
+          1
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          5/Flytaka_rig_and_skinning_v8_ACABAT:Columna 6/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          7/Flytaka_rig_and_skinning_v8_ACABAT:Columna 8/Flytaka_rig_and_skinning_v8_ACABAT:COLA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Cola 2
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          5/Flytaka_rig_and_skinning_v8_ACABAT:Columna 6/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          7/Flytaka_rig_and_skinning_v8_ACABAT:Columna 8/Flytaka_rig_and_skinning_v8_ACABAT:COLA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Cola 2/Flytaka_rig_and_skinning_v8_ACABAT:Cola
+          3
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          5/Flytaka_rig_and_skinning_v8_ACABAT:Columna 6/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          7/Flytaka_rig_and_skinning_v8_ACABAT:Columna 8/Flytaka_rig_and_skinning_v8_ACABAT:COLA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Cola 2/Flytaka_rig_and_skinning_v8_ACABAT:Cola
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Cola 4
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES/Flytaka_rig_and_skinning_v8_ACABAT:COLUMNA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Columna 2/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Columna 4/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          5/Flytaka_rig_and_skinning_v8_ACABAT:Columna 6/Flytaka_rig_and_skinning_v8_ACABAT:Columna
+          7/Flytaka_rig_and_skinning_v8_ACABAT:Columna 8/Flytaka_rig_and_skinning_v8_ACABAT:COLA
+          1/Flytaka_rig_and_skinning_v8_ACABAT:Cola 2/Flytaka_rig_and_skinning_v8_ACABAT:Cola
+          3/Flytaka_rig_and_skinning_v8_ACABAT:Cola 4/Flytaka_rig_and_skinning_v8_ACABAT:Cola
+          5
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:Flytaka BONES1
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:group
+        weight: 1
+      - path: Flytaka_rig_and_skinning_v8_ACABAT:group/Flytaka_rig_and_skinning_v8_ACABAT:pasted__Flytaka
+        weight: 1
+      - path: group
+        weight: 1
+      - path: group/Flytaka_rig_and_skinning_v8_ACABAT1:Flytaka BONES
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
