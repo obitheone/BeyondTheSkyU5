@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public enum DronStates {Follow = 1, Talking}
 
@@ -12,11 +13,17 @@ public class DronController : MonoBehaviour {
 	public float rotDamping = 3.0f;
     public float movDamping = 2.0f;
     public GameObject message;
+    public string[] messagesText;
+    public GameObject currentMessageText;
 
     private NavMeshAgent _agent;
     private DronStates _state;
     private bool _showingMessage;
-    private int _messageID;
+    private int _numMessagesToShow;
+    private int[] _messagesIDs;
+    private int _currentMessageID;
+    private string _filePath;
+
 
     void Awake()
     {
@@ -38,9 +45,30 @@ public class DronController : MonoBehaviour {
         return _state;
     }
 
-    public void ShowMessage(int id)
+    public void MessagesToShow(int num, int[] messageIDs)
     {
-        _messageID = id;
+        _numMessagesToShow = num;
+        _messagesIDs = messageIDs;
+        //currentMessageText.GetComponent<Text>().text = messagesText[_messagesIDs[_currentMessageID]];
+        currentMessageText.GetComponent<Text>().text = UI_DronMessages.Instance.GetMessage(_messagesIDs[_currentMessageID]);
+    }
+
+    public void ActiveNextMessage()
+    {
+        --_numMessagesToShow;
+        ++_currentMessageID;
+        if (_numMessagesToShow == 0)
+        {
+            message.SetActive(false);
+            _state = DronStates.Follow;
+            TP_Camera.Instance.modoCamara = CameraTypes.Follow;
+            TP_Status.Instance.SetControllable(true);
+        }
+        else
+        {
+            //Cambiar al siguiente mensaje
+            currentMessageText.GetComponent<Text>().text = messagesText[_messagesIDs[_currentMessageID]];
+        }
     }
 
 	void Start () {
@@ -49,6 +77,7 @@ public class DronController : MonoBehaviour {
         _state = DronStates.Follow;
         _showingMessage = false;
         message.SetActive(false);
+        _currentMessageID = 0;
 	}
 
 	
@@ -89,14 +118,10 @@ public class DronController : MonoBehaviour {
 						
 			if (distancia<2) agent.enabled = true;*/
         Vector3 test = transform.position - talkingPos.position;
-        if (test.magnitude < 0.1f && _state == DronStates.Talking && !_showingMessage && _messageID > 0)
+        if (test.magnitude < 0.1f && _state == DronStates.Talking && message.activeSelf == false)
         {
-            _showingMessage = true;
-            //Instantiate(message, messagePos.position, Quaternion.identity);
             message.SetActive(true);
-            _messageID = 0;
         }
-       /// Debug.Log(test.magnitude);
 	}
 	
 }

@@ -93,11 +93,8 @@ public class TP_Controller : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space))//boton para quitar el mensaje
         {
-            //desactivar modo mensaje
-            TP_Camera.Instance.modoCamara = CameraTypes.Follow;
-            DronController.Instance.ActivateState(DronStates.Follow);
-            DronController.Instance.message.SetActive(false);
-            TP_Status.Instance.SetControllable(true);
+            //Activar siguiente mensaje, pero si no hya, desactivar el modo mensaje.
+            DronController.Instance.ActiveNextMessage();
         }
     }
 

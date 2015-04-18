@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Debug\newdbg.cs" />
     <Compile Include="Assets\Scripts\Dron\DronController.cs" />
     <Compile Include="Assets\Scripts\Dron\UI_DronLife_DamageAnim.cs" />
+    <Compile Include="Assets\Scripts\Dron\UI_DronMessages.cs" />
     <Compile Include="Assets\Scripts\Dron\UI_LifeController.cs" />
     <Compile Include="Assets\Scripts\Enemys\AgentScriptFlytaka.cs" />
     <Compile Include="Assets\Scripts\Enemys\AgentScriptOrutaka.cs" />
