@@ -99,47 +99,38 @@ public class AgentScriptFlytaka : MonoBehaviour {
 
 	void Range_attack()
 	{
-		//encarar hacia el player y disparar//
-		//agent.enabled = false;
 		Vector3 relativePos = target.position - transform.position;
 		Quaternion rotation = Quaternion.LookRotation(relativePos);
 		relativePos = rotation.eulerAngles;
 		relativePos.x = 0f;
 		rotation.eulerAngles = relativePos;
 		transform.rotation = rotation;
-		//transform.rotation = rotation;
-		//transform.rotation=new Vector3 (0,transform.rotation.y,0);
-		//transform.LookAt(target.transform);
-		//transform.RotateAround(transform.position,new Vector3(0,1,0),target.transform.localEulerAngles.y);
-		//transform.Rotate(new Vector3(transform.rotation.eulerAngles.x,target.transform.localEulerAngles.y,transform.rotation.eulerAngles.z));
 
 		if (Time.time > nextFire)
 		{
 			nextFire = Time.time + fireRate;
-			GameObject newProjectile = Instantiate( tempshoot, transform.position, transform.rotation ) as GameObject;
-			newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection( new Vector3( 0, 0, 10) );
+			GameObject newProjectile = Instantiate( tempshoot,new Vector3( transform.position.x, transform.position.y+0.6f, transform.position.z), transform.rotation ) as GameObject;
+
+			Vector3 direction =  (transform.position-target.position).normalized;
+
+			newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection(0,0,5);
 		}
 	}
 	void meele_attack()
 	{
-		//agent.enabled = false;
-		//encarar hacia el player y disparar//
 		Vector3 relativePos = target.position - transform.position;
 		Quaternion rotation = Quaternion.LookRotation(relativePos);
 		relativePos = rotation.eulerAngles;
 		relativePos.x = 0f;
 		rotation.eulerAngles = relativePos;
 		transform.rotation = rotation;
-		//transform.rotation = rotation;
-		//transform.LookAt(target.transform);
-		//transform.RotateAround(transform.position,new Vector3(0,1,0),target.transform.localEulerAngles.y);
-		//transform.Rotate(new Vector3(transform.rotation.eulerAngles.x,target.transform.localEulerAngles.y,transform.rotation.eulerAngles.z));
-
+	
 		if (Time.time > nextFire)
 		{
 			nextFire = Time.time + fireRate;
-			GameObject newProjectile = Instantiate( tempshoot, transform.position, transform.rotation ) as GameObject;
-			newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection( new Vector3( 0, 0, 10) );
+			GameObject newProjectile = Instantiate( tempshoot, new Vector3( transform.position.x, transform.position.y+0.6f, transform.position.z), transform.rotation ) as GameObject;
+			Vector3 direction =  (transform.position-target.position).normalized;
+			newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection( 0,0,5);
 		}
 	}
 
