@@ -110,7 +110,10 @@ public class AgentScriptFlytaka : MonoBehaviour {
 		{
 			nextFire = Time.time + fireRate;
 			GameObject newProjectile = Instantiate( tempshoot,new Vector3( transform.position.x, transform.position.y+0.6f, transform.position.z), transform.rotation ) as GameObject;
-			newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection( new Vector3( 0, 0, 10) );
+
+			Vector3 direction =  (transform.position-target.position).normalized;
+
+			newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection(0,0,5);
 		}
 	}
 	void meele_attack()
@@ -126,7 +129,8 @@ public class AgentScriptFlytaka : MonoBehaviour {
 		{
 			nextFire = Time.time + fireRate;
 			GameObject newProjectile = Instantiate( tempshoot, new Vector3( transform.position.x, transform.position.y+0.6f, transform.position.z), transform.rotation ) as GameObject;
-			newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection( new Vector3( 0, 0, 10) );
+			Vector3 direction =  (transform.position-target.position).normalized;
+			newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection( 0,0,5);
 		}
 	}
 
