@@ -101,11 +101,17 @@ public class AgentScriptFlytaka : MonoBehaviour {
 	{
 		//encarar hacia el player y disparar//
 		//agent.enabled = false;
-		//Vector3 relativePos = target.position - transform.position;
-		//Quaternion rotation = Quaternion.LookRotation(relativePos);
-		//transform.rotation = rotation;
+		Vector3 relativePos = target.position - transform.position;
+		Quaternion rotation = Quaternion.LookRotation(relativePos);
+		relativePos = rotation.eulerAngles;
+		relativePos.x = 0f;
+		rotation.eulerAngles = relativePos;
+		transform.rotation = rotation;
 		//transform.rotation = rotation;
 		//transform.rotation=new Vector3 (0,transform.rotation.y,0);
+		//transform.LookAt(target.transform);
+		//transform.RotateAround(transform.position,new Vector3(0,1,0),target.transform.localEulerAngles.y);
+		//transform.Rotate(new Vector3(transform.rotation.eulerAngles.x,target.transform.localEulerAngles.y,transform.rotation.eulerAngles.z));
 
 		if (Time.time > nextFire)
 		{
@@ -118,10 +124,16 @@ public class AgentScriptFlytaka : MonoBehaviour {
 	{
 		//agent.enabled = false;
 		//encarar hacia el player y disparar//
-		//Vector3 relativePos = target.position - transform.position;
-		//Quaternion rotation = Quaternion.LookRotation(relativePos);
+		Vector3 relativePos = target.position - transform.position;
+		Quaternion rotation = Quaternion.LookRotation(relativePos);
+		relativePos = rotation.eulerAngles;
+		relativePos.x = 0f;
+		rotation.eulerAngles = relativePos;
+		transform.rotation = rotation;
 		//transform.rotation = rotation;
-		//transform.rotation = rotation;
+		//transform.LookAt(target.transform);
+		//transform.RotateAround(transform.position,new Vector3(0,1,0),target.transform.localEulerAngles.y);
+		//transform.Rotate(new Vector3(transform.rotation.eulerAngles.x,target.transform.localEulerAngles.y,transform.rotation.eulerAngles.z));
 
 		if (Time.time > nextFire)
 		{

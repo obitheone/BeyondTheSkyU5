@@ -72,7 +72,7 @@ public class Status_Controller_Flytaka : MonoBehaviour {
 										animController.SetBool("isAttacking", false);
 								} else {
 										state = PATROL;
-									animController.SetBool("isAttacking", false);
+										animController.SetBool("isAttacking", false);
 										animController.SetBool("isMoving", false);
 								}
 						}
