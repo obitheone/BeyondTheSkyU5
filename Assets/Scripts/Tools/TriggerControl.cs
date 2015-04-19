@@ -21,6 +21,8 @@ public class TriggerControl : MonoBehaviour {
         public CameraTypes CameraType;
         public int Side2D;
         public int[] messagesToShow;
+        public Animator anim;
+        public string animationName;
 
         public Option() { }
 
@@ -118,6 +120,18 @@ public class TriggerControl : MonoBehaviour {
                             case OptionType.DisableMovement:
                                 TP_Status.Instance.SetControllable(false);
                                 break;
+                            case OptionType.PlayAnimation:
+                                if (opciones[i].anim != null || opciones[i].animationName != "")
+                                {
+                                    opciones[i].anim.Play(opciones[i].animationName);
+                                }
+                                else
+                                {
+                                    Debug.LogError("Animator and animation name must be defined!!!");
+                                    UnityEditor.EditorApplication.isPlaying = false;
+                                }
+                                break;
+
                         }
                     }
                 }
