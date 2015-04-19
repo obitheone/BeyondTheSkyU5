@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 //public enum TriggerType {Camera = 1, HUD, Player, Particle, MultiOptions}
-public enum OptionType { DisableMovement = 1, FixCamera, ChangeCameraType, Camera2D, DronMessage, KillPlayer}
+public enum OptionType { DisableMovement = 1, FixCamera, ChangeCameraType, Camera2D, DronMessage, KillPlayer, PlayAnimation}
 
 public class TriggerControl : MonoBehaviour {
 
