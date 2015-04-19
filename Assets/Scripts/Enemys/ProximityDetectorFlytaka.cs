@@ -16,7 +16,7 @@ public class ProximityDetectorFlytaka : MonoBehaviour {
 	}
 	void OnTriggerStay(Collider other) {
 			
-			if (other.gameObject.tag == "Player") {//aqui mirar si ponemos algun tag mas como rocas y tal .
+		if ((other.gameObject.tag == "Player")||(other.gameObject.tag == "NPC")) {//aqui mirar si ponemos algun tag mas como rocas y tal .
 				SC.player_view=true;
 				SC.chasingTime=0;
 				inc_chase_time = false;
@@ -25,14 +25,14 @@ public class ProximityDetectorFlytaka : MonoBehaviour {
 		}
 	void OnTriggerExit(Collider other) {
 		
-		if (other.gameObject.tag == "Player") {//aqui mirar si ponemos algun tag mas como rocas y tal .
+		if ((other.gameObject.tag == "Player")||(other.gameObject.tag == "NPC")) {//aqui mirar si ponemos algun tag mas como rocas y tal .
 			SC.player_view=false;
 			inc_chase_time = true;
 			SC.player_distace=Vector3.Distance(other.gameObject.transform.position,transform.position);
 		}
 	}
 	void OnTriggerEnter(Collider other) {
-			if (other.gameObject.tag == "Player") {//aqui mirar si ponemos algun tag mas como rocas y tal .
+		if ((other.gameObject.tag == "Player")||(other.gameObject.tag == "NPC")) {//aqui mirar si ponemos algun tag mas como rocas y tal .
 				SC.player_view=true;
 				SC.chasingTime=0;
 				inc_chase_time = false;

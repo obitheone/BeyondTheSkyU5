@@ -34,7 +34,7 @@ public class AgentScriptFlytaka : MonoBehaviour {
 
 	void Start () {
 		agent = GetComponent<NavMeshAgent> ();
-		target = TP_Skills.Instance.player.transform;
+		//target = TP_Skills.Instance.player.transform;
 		SC = GetComponent<Status_Controller_Flytaka> () as Status_Controller_Flytaka;
 	}
 
