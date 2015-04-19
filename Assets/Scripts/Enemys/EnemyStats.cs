@@ -8,11 +8,15 @@ public class EnemyStats : MonoBehaviour {
 	public float sinkSpeed = 0.5f; 		//velocidad en que se hunde al morir
 	public AudioClip deathClip;			//sonido al morir
 	public AudioClip damageClip;		//sonido al morir
+	public float StunTime = 3;
 
-	AudioSource enemyAudio;
-	CapsuleCollider capsuleCollider;
+	private float Stuntimer=0;
+	private AudioSource enemyAudio;
+	private CapsuleCollider capsuleCollider;
 	public bool isDead;
-	bool isSinking;
+	public bool isStun;
+	private bool isSinking;
+
 
 	//Animator anim; //animacion de muerte
 	//ParticleSystem hitParticles; //efecto al golpear al enemigo.
@@ -33,14 +37,19 @@ public class EnemyStats : MonoBehaviour {
 		{
 			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
 		}
+		if (isStun)
+		{
+			if (Stuntimer>StunTime) {isStun=false;Stuntimer=0;}
+			else Stuntimer+=Time.deltaTime;
+		}
 	}
 
 	public void TakeDamage (float amount, Vector3 hitPoint)
 	{
 		if(isDead)
 			return;
-		enemyAudio.clip = damageClip;
-		enemyAudio.Play ();
+//		enemyAudio.clip = damageClip;
+//		enemyAudio.Play ();
 		
 		currentHealth -= amount;
 		
@@ -52,6 +61,7 @@ public class EnemyStats : MonoBehaviour {
 			Death ();
 			StartSinking ();
 		}
+		else Stun ();
 	}
 
 	void Death ()
@@ -60,8 +70,14 @@ public class EnemyStats : MonoBehaviour {
 		
 		capsuleCollider.isTrigger = true;
 		//anim.SetTrigger ("Dead"); //activamos la animacion de la muerte.
-		enemyAudio.clip = deathClip;
-		enemyAudio.Play();
+//		enemyAudio.clip = deathClip;
+//		enemyAudio.Play();
+	}
+
+	void Stun()
+	{
+		isStun=true;
+		Stuntimer=0;
 	}
 
 	public void StartSinking ()
@@ -74,8 +90,14 @@ public class EnemyStats : MonoBehaviour {
 
 	void  OnCollisionEnter (Collision hit)
 	{
-		if (hit.gameObject.tag == "Beamer") 
+		Vector3 velocity=hit.gameObject.GetComponent <Rigidbody> ().velocity;
+		Debug.Log(velocity);
+		if ((hit.gameObject.layer == LayerMask.NameToLayer("Beamer")) && (!Vector3.Equals(velocity,Vector3.zero)))
 		{
+			GetComponent <AgentScriptFlytaka> ().target=TP_Skills.Instance.player.transform;
+			//avisamos a los compañeros de que me han pegado
+			GetComponent <AgentScriptFlytaka> ().warn_friends();
+			/////
 			Rigidbody body = hit.collider.attachedRigidbody;
 			TakeDamage(body.sleepVelocity*200,hit.transform.position);	
 		}

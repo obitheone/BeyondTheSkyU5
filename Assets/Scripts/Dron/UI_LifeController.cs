@@ -25,19 +25,19 @@ public class UI_LifeController : MonoBehaviour {
 	void Start () {
 		currentLife = 100f;
 		updateLife = false;
-		ChangeType (UI_LifeStyle.Vertical);
+		ChangeType (UI_LifeStyle.Radial360);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.KeypadMultiply)) {
+		/*if (Input.GetKeyDown (KeyCode.KeypadMultiply)) {
 			if (type == UI_LifeStyle.Radial180)
 				type = UI_LifeStyle.Vertical;
 			else
 				type += 1;
 			ChangeType(type);
-		}
-		if (Input.GetKeyDown (KeyCode.KeypadPlus)) {
+		}*/
+		/*if (Input.GetKeyDown (KeyCode.KeypadPlus)) {
 			if (currentLife + 20f <= 100f){
 				currentLife += 20;
 				updateLife = true;
@@ -49,7 +49,7 @@ public class UI_LifeController : MonoBehaviour {
 				updateLife = true;
 				UI_LifeAnimator.SetBool("damaged", true);
 			}
-		}
+		}*/
 
 		if(updateLife) UpdateLifeUI();
 
@@ -57,6 +57,17 @@ public class UI_LifeController : MonoBehaviour {
 
 		this.transform.LookAt (Camera.main.transform);
 	}
+
+    public void SetLife(float value)
+    {
+        if (currentLife - value >= 0f)
+        {
+            currentLife -= value; //disminuyo vida del HUD
+            TP_Status.Instance.SubsVida((int)value);
+            updateLife = true;
+            UI_LifeAnimator.SetBool("damaged", true);
+        }
+    }
 
 	private void UpdateLifeUI()
 	{

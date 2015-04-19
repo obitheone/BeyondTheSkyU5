@@ -7,6 +7,7 @@ public class Status_Controller_Flytaka : MonoBehaviour {
 	private const int CHASE=1;
 	private const int PATROL=2;
 	private const int DEAD=3;
+	private const int STUN=4;
 
 	private const int RANGE_ATTACK=0;
 	private const int MEELE_ATTACK=1;
@@ -48,6 +49,8 @@ public class Status_Controller_Flytaka : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 				if (!ES.isDead) {
+					if (!ES.isStun)
+					{
 						if (player_view) { //vemos al player
 								if (player_distace > range_distance){
 										state = CHASE;
@@ -76,6 +79,12 @@ public class Status_Controller_Flytaka : MonoBehaviour {
 										animController.SetBool("isMoving", false);
 								}
 						}
+					}
+					else
+					{
+						state=STUN;
+						//animController.SetBool("isStun", false);
+					}
 				} 
 				else 
 				{
