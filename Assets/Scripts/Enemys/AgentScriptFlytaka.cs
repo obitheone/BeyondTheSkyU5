@@ -22,6 +22,8 @@ public class AgentScriptFlytaka : MonoBehaviour {
 	private const int ATTACK=0;
 	private const int CHASE=1;
 	private const int PATROL=2;
+	private const int DEAD=3;
+	private const int STUN=4;
 	/**/
 
 	private const int RANGE_ATTACK=0;
