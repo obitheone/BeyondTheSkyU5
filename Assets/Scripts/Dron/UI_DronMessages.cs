@@ -5,7 +5,7 @@ public class UI_DronMessages : MonoBehaviour {
 
     public static UI_DronMessages Instance;
 
-    public Dictionary<string,string> messages = new Dictionary<string, string>();
+    public Dictionary<int,string> messages = new Dictionary<int, string>();
 
     void Awake()
     {
@@ -14,11 +14,11 @@ public class UI_DronMessages : MonoBehaviour {
 
     void Start()
     {
-        messages.Add("1", "HOLA PEPE CABRON");
+        messages.Add(0, "HOLA PEPE CABRON");
     }
 
     public string GetMessage(int ID)
     {
-        return messages[ID.ToString()];
+        return messages[ID];
     }
 }

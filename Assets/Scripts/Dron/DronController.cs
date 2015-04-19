@@ -22,7 +22,6 @@ public class DronController : MonoBehaviour {
     private int _numMessagesToShow;
     private int[] _messagesIDs;
     private int _currentMessageID;
-    private string _filePath;
 
 
     void Awake()
@@ -67,7 +66,7 @@ public class DronController : MonoBehaviour {
         else
         {
             //Cambiar al siguiente mensaje
-            currentMessageText.GetComponent<Text>().text = messagesText[_messagesIDs[_currentMessageID]];
+            currentMessageText.GetComponent<Text>().text = UI_DronMessages.Instance.GetMessage(_messagesIDs[_currentMessageID]);
         }
     }
 
