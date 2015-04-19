@@ -20,7 +20,7 @@ public class TriggerControl : MonoBehaviour {
         public CameraTypes CameraType;
         public int Side2D;
         public int[] messagesToShow;
-        public Animator anim;
+        public GameObject objectToAnim;
         public string animationName;
 
         public Option() { }
@@ -61,7 +61,7 @@ public class TriggerControl : MonoBehaviour {
                 {
                     if (exit)
                     {
-                        if (exitOptions[i].enable)//Si la opción está habilitada
+                        if (exitOptions[i].enable)//Si la opcion sigue deshabilitada, cambio las opciones, si no, es que no se hace nada
                         {
                             switch (exitOptions[i].option)
                             {
@@ -115,9 +115,10 @@ public class TriggerControl : MonoBehaviour {
                                     TP_Status.Instance.SetControllable(false);
                                     break;
                                 case OptionType.PlayAnimation:
-                                    if (exitOptions[i].anim != null || exitOptions[i].animationName != "")
+                                    if (exitOptions[i].objectToAnim != null || exitOptions[i].animationName != "")
                                     {
-                                        exitOptions[i].anim.Play(exitOptions[i].animationName);
+                                        //exitOptions[i].objectToAnim.Play(exitOptions[i].animationName);
+                                        exitOptions[i].objectToAnim.GetComponent<Animator>().Play(exitOptions[i].animationName);
                                     }
                                     else
                                     {
@@ -127,6 +128,10 @@ public class TriggerControl : MonoBehaviour {
                                     break;
 
                             }
+                        }
+                        else
+                        { //si la opcion de salida esta disable, desactivo la entrada ( no volverá a activarse )
+                            enterOptions[i].enable = false;
                         }
                     }
                     else
@@ -185,9 +190,9 @@ public class TriggerControl : MonoBehaviour {
                                     TP_Status.Instance.SetControllable(false);
                                     break;
                                 case OptionType.PlayAnimation:
-                                    if (enterOptions[i].anim != null || enterOptions[i].animationName != "")
+                                    if (enterOptions[i].objectToAnim != null || enterOptions[i].animationName != "")
                                     {
-                                        enterOptions[i].anim.Play(enterOptions[i].animationName);
+                                        exitOptions[i].objectToAnim.GetComponent<Animator>().Play(exitOptions[i].animationName);
                                     }
                                     else
                                     {
