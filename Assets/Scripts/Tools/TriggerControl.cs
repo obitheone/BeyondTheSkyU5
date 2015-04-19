@@ -58,72 +58,87 @@ public class TriggerControl : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter(Collider col){
-        insideTrigger = true;
-        for (int i = 0; i < opciones.Length; ++i)
+    void OnTriggerEnter(Collider col)
+    {
+        switch (col.gameObject.tag)
         {
-            if (opciones[i].enable)//Si la opción está habilitada
-            {
-                switch (opciones[i].option)
+            case "Player":
+                for (int i = 0; i < opciones.Length; ++i)
                 {
-                    case OptionType.FixCamera:
-                        if (opciones[i].cameraPos != null)
+                    if (opciones[i].enable)//Si la opción está habilitada
+                    {
+                        switch (opciones[i].option)
                         {
-                            TP_Camera.Instance.transform.position = opciones[i].cameraPos.transform.position;
-                            TP_Camera.Instance.transform.rotation = opciones[i].cameraPos.transform.rotation;
-                            TP_Camera.Instance.SetMode(CameraTypes.Puntos);
-                            if (opciones[i].lookAtObject != null) TP_Camera.Instance.LookAtObject(opciones[i].lookAtObject.transform, true);
+                            case OptionType.FixCamera:
+                                if (opciones[i].cameraPos != null)
+                                {
+                                    TP_Camera.Instance.transform.position = opciones[i].cameraPos.transform.position;
+                                    TP_Camera.Instance.transform.rotation = opciones[i].cameraPos.transform.rotation;
+                                    TP_Camera.Instance.SetMode(CameraTypes.Puntos);
+                                    if (opciones[i].lookAtObject != null) TP_Camera.Instance.LookAtObject(opciones[i].lookAtObject.transform, true);
+                                }
+                                else
+                                {
+                                    Debug.LogError("Camera position must be set in Inspector");
+                                    UnityEditor.EditorApplication.isPlaying = false;
+                                }
+                                break;
+                            case OptionType.ChangeCameraType:
+                                if (opciones[i].CameraType != 0)
+                                {
+                                    TP_Camera.Instance.modoCamara = opciones[i].CameraType;
+                                }
+                                else
+                                {
+                                    Debug.LogError("CameraType must be defined on Inspector!");
+                                    UnityEditor.EditorApplication.isPlaying = false;
+                                }
+                                break;
+                            case OptionType.DronMessage:
+                                if (opciones[i].messagesToShow.Length != 0)
+                                {
+                                    DronController.Instance.ActivateState(DronStates.Talking);
+                                    TP_Camera.Instance.modoCamara = CameraTypes.MessageReading;
+                                    TP_Status.Instance.SetControllable(false);
+                                    DronController.Instance.MessagesToShow(opciones[i].messagesToShow.Length, opciones[i].messagesToShow);//REVISAR
+                                }
+                                else
+                                {
+                                    Debug.LogError("The messages number must be greater than 0!!!");
+                                    UnityEditor.EditorApplication.isPlaying = false;
+                                }
+                                break;
+                            case OptionType.Camera2D:
+                                TP_Camera.Instance.ActiveCamera2D(opciones[i].Side2D);
+                                break;
+                            case OptionType.KillPlayer:
+                                Debug.Log("Soy: " + col.tag);
+                                TP_Status.Instance.SubsVida(100);
+                                break;
+                            case OptionType.DisableMovement:
+                                TP_Status.Instance.SetControllable(false);
+                                break;
                         }
-                        else
-                        {
-                            Debug.LogError("Camera position must be set in Inspector");
-                            UnityEditor.EditorApplication.isPlaying = false;
-                        }
-                        break;
-                    case OptionType.ChangeCameraType:
-                        if (opciones[i].CameraType != 0)
-                        {
-                            TP_Camera.Instance.modoCamara = opciones[i].CameraType;
-                        }
-                        else
-                        {
-                            Debug.LogError("CameraType must be defined on Inspector!");
-                            UnityEditor.EditorApplication.isPlaying = false;
-                        }
-                        break;
-                    case OptionType.DronMessage:
-                        if (opciones[i].messagesToShow.Length != 0)
-                        {
-                            DronController.Instance.ActivateState(DronStates.Talking);
-                            TP_Camera.Instance.modoCamara = CameraTypes.MessageReading;
-                            TP_Status.Instance.SetControllable(false);
-                            DronController.Instance.MessagesToShow(opciones[i].messagesToShow.Length, opciones[i].messagesToShow);//REVISAR
-                        }
-                        else
-                        {
-                            Debug.LogError("The messages number must be greater than 0!!!");
-                            UnityEditor.EditorApplication.isPlaying = false;
-                        }
-                        break;
-                    case OptionType.Camera2D:
-                        TP_Camera.Instance.ActiveCamera2D(opciones[i].Side2D);
-                        break;
-                    case OptionType.KillPlayer:
-                        Debug.Log("Soy: " + col.tag);
-                        TP_Status.Instance.SubsVida(100);
-                        break;
-                    case OptionType.DisableMovement:
-                        TP_Status.Instance.SetControllable(false);
-                        break;
+                    }
                 }
-            }
+                break;
         }
     }
     
-    void OnTriggerExit() //SI HAY OPCIONES REVERSIBLES AL SALIR DEL TRIGGER, LAS REVIERTO
+    void OnTriggerExit(Collider col) //SI HAY OPCIONES REVERSIBLES AL SALIR DEL TRIGGER, LAS REVIERTO
     {
-        insideTrigger = false;
-        RevertChanges();
+        switch(col.tag)
+        { 
+            case "Player":
+                for (int i = 0; i < opciones.Length; ++i)
+                {
+                    if (opciones[i].enable)//Si la opción está habilitada
+                    {
+                        if (opciones[i].option == OptionType.DronMessage) opciones[i].enable = false;
+                    }
+                }
+                break;
+        }
     }
 
 
