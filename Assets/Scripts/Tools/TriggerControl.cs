@@ -192,7 +192,7 @@ public class TriggerControl : MonoBehaviour {
                                 case OptionType.PlayAnimation:
                                     if (enterOptions[i].objectToAnim != null || enterOptions[i].animationName != "")
                                     {
-                                        exitOptions[i].objectToAnim.GetComponent<Animator>().Play(exitOptions[i].animationName);
+                                        enterOptions[i].objectToAnim.GetComponent<Animator>().Play(enterOptions[i].animationName);
                                     }
                                     else
                                     {
