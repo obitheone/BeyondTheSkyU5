@@ -60,24 +60,25 @@ public class UI_LifeController : MonoBehaviour {
 
     public void SetLife(float value)
     {
-        if (currentLife - value >= 0f)
-        {
-            currentLife -= value; //disminuyo vida del HUD
-            TP_Status.Instance.SubsVida((int)value);
-            updateLife = true;
-            UI_LifeAnimator.SetBool("damaged", true);
-        }
+        currentLife = value; //disminuyo vida del HUD
+        updateLife = true;
+        UI_LifeAnimator.SetBool("damaged", true);
     }
 
 	private void UpdateLifeUI()
 	{
-		if (currentLife - (lifeText.fillAmount * 100 / maxFillAmount) > 0.1f && lifeText.fillAmount * 100 / maxFillAmount < currentLife)
-			lifeText.fillAmount += Time.deltaTime / downRate;
-		else if (lifeText.fillAmount * 100 / maxFillAmount - currentLife > 0.1f && lifeText.fillAmount * 100f / maxFillAmount > currentLife)
-			lifeText.fillAmount -= Time.deltaTime / downRate;
-		else {
-			updateLife = false;
-		}
+        if (currentLife - (lifeText.fillAmount * 100 / maxFillAmount) > 0.1f && lifeText.fillAmount * 100 / maxFillAmount < currentLife)
+        {
+            lifeText.fillAmount += Time.deltaTime / downRate;
+        }
+        else if (lifeText.fillAmount * 100 / maxFillAmount - currentLife > 0.1f && lifeText.fillAmount * 100f / maxFillAmount > currentLife)
+        {
+            lifeText.fillAmount -= Time.deltaTime / downRate;
+        }
+        else
+        {
+            updateLife = false;
+        }
 	}
 
 	public void ChangeType(UI_LifeStyle type){
