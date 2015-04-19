@@ -1,42 +1,30 @@
 fileFormatVersion: 2
-guid: b0314c4178e68ab4785b29c7f44d5577
-timeCreated: 1428996870
+guid: 3a81383c6c38d9147a9a20cd4e5fc409
+timeCreated: 1429356443
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Aro
-    100002: joint11
-    100004: joint12
-    100006: joint2
-    100008: joint3
-    100010: joint4
-    100012: joint5
-    100014: joint6
-    100016: joint7
-    100018: joint8
-    100020: joint9
-    100022: //RootNode
-    100024: Seta_Plataforma_V1
-    100026: Troncho
-    400000: Aro
-    400002: joint11
-    400004: joint12
-    400006: joint2
-    400008: joint3
-    400010: joint4
-    400012: joint5
-    400014: joint6
-    400016: joint7
-    400018: joint8
-    400020: joint9
-    400022: //RootNode
-    400024: Seta_Plataforma_V1
-    400026: Troncho
-    4300000: Seta_Plataforma_V1
-    7400000: Take 001
+    100000: group
+    100002: pasted__pasted__seta_highINP
+    100004: pasted__Seta_plataforma_grande_1_Seta_grande
+    100006: //RootNode
+    100008: Seta_grande
+    100010: Seta_grande_2
+    100012: Seta_Grande_3
+    100014: Seta_plataforma_grande_1_Seta_grande
+    400000: group
+    400002: pasted__pasted__seta_highINP
+    400004: pasted__Seta_plataforma_grande_1_Seta_grande
+    400006: //RootNode
+    400008: Seta_grande
+    400010: Seta_grande_2
+    400012: Seta_Grande_3
+    400014: Seta_plataforma_grande_1_Seta_grande
+    2300000: pasted__pasted__seta_highINP
+    3300000: pasted__pasted__seta_highINP
+    4300000: pasted__pasted__seta_highINP
     9500000: //RootNode
-    13700000: Seta_Plataforma_V1
   materials:
     importMaterials: 1
     materialName: 0
@@ -76,7 +64,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []
@@ -90,7 +78,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
