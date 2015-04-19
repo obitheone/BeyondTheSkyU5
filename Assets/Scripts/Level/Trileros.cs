@@ -49,9 +49,6 @@ public class Trileros : MonoBehaviour {
 			if (_Sp3.progress == 1) P3.enableEmission = false;
 			else P3.enableEmission = true;
 			if ((_Sp1.progress == 1) && (_Sp2.progress == 1) && (_Sp3.progress == 1)) {
-				
-				
-
 				_canchoose = true;
 			} else {
 				//ponemos la muestra aleatoriamente solo miro una.. pa que mirarlas todas :)

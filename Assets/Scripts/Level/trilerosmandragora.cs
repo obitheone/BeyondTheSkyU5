@@ -4,7 +4,7 @@ using System.Collections;
 public class trilerosmandragora : MonoBehaviour {
 
 	public Trileros tscript;
-	public int idmandrago=0;
+	public int idmandrago=1;
 	// Use this for initialization
 	void Start () {
 	
