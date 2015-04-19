@@ -12,6 +12,7 @@ public class AgentScriptFlytaka : MonoBehaviour {
 	public float chaseTimer = 0f;	// Tiempo que lleva persiguiendo.
 	public GameObject tempshoot;	//la bala que dispara;
 	public float fireRate = 0.5f;
+	public float warndistance=5.0f;
 	private float nextFire = 0.0f;
 
 	private NavMeshAgent agent;
@@ -45,7 +46,10 @@ public class AgentScriptFlytaka : MonoBehaviour {
 
 		switch (state) 
 		{
-			case PATROL: 
+		case STUN: 
+			Stun ();
+			break;
+		case PATROL: 
 				Patrolling ();
 			break;
 
@@ -56,7 +60,7 @@ public class AgentScriptFlytaka : MonoBehaviour {
 			case ATTACK: 
 				
 				attacktype=SC.attack_type;
-				
+				warn_friends();
 				switch (attacktype) {
 					case RANGE_ATTACK:
 							Range_attack();
@@ -72,7 +76,10 @@ public class AgentScriptFlytaka : MonoBehaviour {
 
 		} 
 	}
-
+	void Stun()
+	{
+		agent.enabled = false;
+	}
 	void ChasingFlytaka()
 	{
 			agent.enabled = true;	
@@ -101,6 +108,7 @@ public class AgentScriptFlytaka : MonoBehaviour {
 
 	void Range_attack()
 	{
+		agent.enabled = true;
 		Vector3 relativePos = target.position - transform.position;
 		Quaternion rotation = Quaternion.LookRotation(relativePos);
 		relativePos = rotation.eulerAngles;
@@ -120,6 +128,7 @@ public class AgentScriptFlytaka : MonoBehaviour {
 	}
 	void meele_attack()
 	{
+		agent.enabled = true;
 		Vector3 relativePos = target.position - transform.position;
 		Quaternion rotation = Quaternion.LookRotation(relativePos);
 		relativePos = rotation.eulerAngles;
@@ -135,5 +144,20 @@ public class AgentScriptFlytaka : MonoBehaviour {
 			newProjectile.GetComponent<Rigidbody>().velocity = transform.TransformDirection( 0,0,5);
 		}
 	}
+	public void warn_friends()
+	{
+		Vector3 center = transform.position;
+		Collider[] colliders = Physics.OverlapSphere (center, warndistance);
+		foreach (Collider hit in colliders) {
+			if ((hit) && (hit.gameObject.tag == this.tag)) {
+				//hit.GetComponent<Status_Controller_Flytaka>().state=state;
+				hit.GetComponent<Status_Controller_Flytaka>().player_view=true;
+				hit.GetComponent<Status_Controller_Flytaka>().chasingTime=0;
+				hit.GetComponent <AgentScriptFlytaka> ().target=TP_Skills.Instance.player.transform;
 
+				//hit.GetComponent<Status_Controller_Flytaka>().player_distace=Vector3.Distance(target.transform.position,transform.position);
+			}
+		}
+	}
+	
 }

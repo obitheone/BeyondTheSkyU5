@@ -49,7 +49,7 @@ public class Status_Controller_Flytaka : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 				if (!ES.isDead) {
-					if (!ES.isDead)
+					if (!ES.isStun)
 					{
 						if (player_view) { //vemos al player
 								if (player_distace > range_distance){

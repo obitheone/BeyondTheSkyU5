@@ -48,8 +48,8 @@ public class EnemyStats : MonoBehaviour {
 	{
 		if(isDead)
 			return;
-		enemyAudio.clip = damageClip;
-		enemyAudio.Play ();
+//		enemyAudio.clip = damageClip;
+//		enemyAudio.Play ();
 		
 		currentHealth -= amount;
 		
@@ -70,8 +70,8 @@ public class EnemyStats : MonoBehaviour {
 		
 		capsuleCollider.isTrigger = true;
 		//anim.SetTrigger ("Dead"); //activamos la animacion de la muerte.
-		enemyAudio.clip = deathClip;
-		enemyAudio.Play();
+//		enemyAudio.clip = deathClip;
+//		enemyAudio.Play();
 	}
 
 	void Stun()
@@ -91,9 +91,12 @@ public class EnemyStats : MonoBehaviour {
 	void  OnCollisionEnter (Collision hit)
 	{
 		Vector3 velocity=hit.gameObject.GetComponent <Rigidbody> ().velocity;
-		if ((hit.gameObject.tag == "Beamer") && (!Vector3.Equals(velocity,Vector3.zero)))
+		Debug.Log(velocity);
+		if ((hit.gameObject.layer == LayerMask.NameToLayer("Beamer")) && (!Vector3.Equals(velocity,Vector3.zero)))
 		{
-			//cambiamos su estad a aturdido.
+			GetComponent <AgentScriptFlytaka> ().target=TP_Skills.Instance.player.transform;
+			//avisamos a los compañeros de que me han pegado
+			GetComponent <AgentScriptFlytaka> ().warn_friends();
 			/////
 			Rigidbody body = hit.collider.attachedRigidbody;
 			TakeDamage(body.sleepVelocity*200,hit.transform.position);	
