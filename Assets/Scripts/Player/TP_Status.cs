@@ -8,6 +8,7 @@ public class TP_Status : MonoBehaviour {
     //PUBLIC
     public static TP_Status Instance;
     public Animator animController;
+    public GameObject lifeHUD;
 
 
 
@@ -50,6 +51,8 @@ public class TP_Status : MonoBehaviour {
     {
         if (_vida + num > 100) _vida = 100;
         else _vida += num;
+
+        lifeHUD.GetComponent<UI_LifeController>().SetLife((float)_vida);
     }
 
     public void SubsVida(int num)
@@ -64,6 +67,8 @@ public class TP_Status : MonoBehaviour {
             _isDead = true;
             OnDeath();
         }
+
+        lifeHUD.GetComponent<UI_LifeController>().SetLife((float)_vida);
     }
 
     public void OnDeath()
