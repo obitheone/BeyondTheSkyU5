@@ -3,16 +3,18 @@ using System.Collections;
 
 public class Destroy_delay : MonoBehaviour {
 
+	public float Destroy_time=1f;
 	// Use this for initialization
 	void Start () {
-		Destroy(gameObject, 1f);
+		Destroy(gameObject, Destroy_time);
 	}
-	void OnTriggerEnter(Collider other)
+
+	void  OnCollisionEnter (Collision hit)
 	{
-		if (other.tag == "Player" && !TP_Status.Instance.IsDead())
+		if (hit.gameObject.tag == "Player" && !TP_Status.Instance.IsDead())
 		{
 				TP_Status.Instance.SubsVida(1);
-				int temp=TP_Status.Instance.GetVida();
+				//int temp=TP_Status.Instance.GetVida();
 		}
 	}
 }

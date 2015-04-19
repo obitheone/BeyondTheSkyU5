@@ -11,7 +11,7 @@ public class TP_Skills : MonoBehaviour {
     //PUBLIC
     public static TP_Skills Instance;
     private GameObject _object;
-    private GameObject _beamobject;
+    public GameObject _beamobject;
     private GameObject _tractorobject;
     private Vector3 _hitpoint;
     private bool _beam = false;
@@ -84,18 +84,25 @@ public class TP_Skills : MonoBehaviour {
 	void FixedUpdate()	
 	{
 		if (_beam) {
-			_currentObjectBeamScript.offset_lateral = _lateral;
-			_currentObjectBeamScript.offset_horizontal = _horizontal;
-			_currentLightningBoltScriptR.target = _beamobject.transform.position;
+			if (_beamobject){
+				_currentObjectBeamScript.offset_lateral = _lateral;
+				_currentObjectBeamScript.offset_horizontal = _horizontal;
+				_currentLightningBoltScriptR.target = _beamobject.transform.position;
 
-			if (Input.GetMouseButton (0)) { 
-				_currentObjectBeamScript.energy = _currentObjectBeamScript.energy + 20 * Time.deltaTime;
+				if (Input.GetMouseButton (0)) { 
+					_currentObjectBeamScript.energy = _currentObjectBeamScript.energy + 20 * Time.deltaTime;
+				}
+
+				if (Input.GetMouseButtonUp (1)) { 
+					if (_currentObjectBeamScript.energy < 0)
+						_currentObjectBeamScript.energy = 0;
+					throwobject (_currentObjectBeamScript.energy);
+				}
+
 			}
-
-			if (Input.GetMouseButtonUp (1)) { 
-				if (_currentObjectBeamScript.energy < 0)
-					_currentObjectBeamScript.energy = 0;
-				throwobject (_currentObjectBeamScript.energy);
+			else
+			{
+				deactivatetractorbeam();
 			}
 		} else 
 			if (_push) 
@@ -177,32 +184,32 @@ public class TP_Skills : MonoBehaviour {
 		//Debug.Log ("actuvada Skill:"+enabledSkill);
     }
 
-	private void deactivatetractorbeam()
+	public void deactivatetractorbeam()
 	{
-		_currentObjectBeamScript.enabled= false;
-		_currentLightningBoltScriptR.enabled=false;
-		_beam=false;
-		_lateral=0;
-		_horizontal=0;
 
-		//activamos la burbuja
-		sphericfx.GetComponent<ParticleEmitter>().emit = false;
-		sphericringfx.GetComponent<ParticleEmitter>().emit = false;
-		sphericfx.GetComponent<ParticleRenderer> ().enabled=false;
-		sphericringfx.GetComponent<ParticleRenderer>().enabled=false;
-		electrical.GetComponent<ParticleSystem> ().enableEmission = false;
-		electrical1.GetComponent<ParticleSystem> ().enableEmission = false;
-		electrical2.GetComponent<ParticleSystem> ().enableEmission = false;
-		electrical3.GetComponent<ParticleSystem> ().enableEmission = false;
+			_currentObjectBeamScript.enabled= false;
+			_currentLightningBoltScriptR.enabled=false;
+			_beam=false;
+			_lateral=0;
+			_horizontal=0;
 
-
-		//lo atachamos al player
-		sphericfx.transform.parent=righthand.transform;
-		sphericfx.transform.localPosition=Vector3.zero;
-		sphericfx.transform.localRotation=Quaternion.identity;
+			//activamos la burbuja
+			sphericfx.GetComponent<ParticleEmitter>().emit = false;
+			sphericringfx.GetComponent<ParticleEmitter>().emit = false;
+			sphericfx.GetComponent<ParticleRenderer> ().enabled=false;
+			sphericringfx.GetComponent<ParticleRenderer>().enabled=false;
+			electrical.GetComponent<ParticleSystem> ().enableEmission = false;
+			electrical1.GetComponent<ParticleSystem> ().enableEmission = false;
+			electrical2.GetComponent<ParticleSystem> ().enableEmission = false;
+			electrical3.GetComponent<ParticleSystem> ().enableEmission = false;
 
 
-		enabledSkill = SkillTypes.noSkill;
+			//lo atachamos al player
+			sphericfx.transform.parent=righthand.transform;
+			sphericfx.transform.localPosition=Vector3.zero;
+			sphericfx.transform.localRotation=Quaternion.identity;
+
+			enabledSkill = SkillTypes.noSkill;
 	}
 
 	private void activatetractorbeam()

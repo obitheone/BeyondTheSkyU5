@@ -91,7 +91,7 @@ public class EnemyStats : MonoBehaviour {
 	void  OnCollisionEnter (Collision hit)
 	{
 		Vector3 velocity=hit.gameObject.GetComponent <Rigidbody> ().velocity;
-		Debug.Log(velocity);
+//		Debug.Log(velocity);
 		if ((hit.gameObject.layer == LayerMask.NameToLayer("Beamer")) && (!Vector3.Equals(velocity,Vector3.zero)))
 		{
 			GetComponent <AgentScriptFlytaka> ().target=TP_Skills.Instance.player.transform;
