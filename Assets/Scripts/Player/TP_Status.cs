@@ -74,8 +74,8 @@ public class TP_Status : MonoBehaviour {
     public void OnDeath()
     {
         //do something on Death
-        _isSinking = true;
-        StartCoroutine(CargarEscena(0.5f));
+        //_isSinking = true;
+        StartCoroutine(CargarEscena(1.5f));
     }
 
     public bool IsJumping() { return _isJumping; }
@@ -119,10 +119,10 @@ public class TP_Status : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(_isSinking)
+		/*if(_isSinking)
         {
 			TP_Skills.Instance.player.transform.Translate (-Vector3.up * 0.25f * Time.deltaTime);
-		}
+		}*/
 
         if (_isMoving)
         {
@@ -142,6 +142,8 @@ public class TP_Status : MonoBehaviour {
             animController.SetBool("isJumping", false);
             animController.SetBool("isGrounded", true);
         }
+
+        if (_isDead) animController.SetBool("isDead", true);
 	}
 
     public bool IsControllable()
